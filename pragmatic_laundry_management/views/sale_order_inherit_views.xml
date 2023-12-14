@@ -1,0 +1,122 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="inherit_context_model_view_form">
+            <field name="name">inherited.model.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="replace">
+                    <header>
+                        <button name="action_confirm" string="Confirm" type="object" class="btn btn-primary" attrs="{'invisible':  ['|','|','|','|','|','|','|','|','|','|',('state','=', 'sale'),('state','=', 'assign_to_pick_up'),('state', '=', 'picked'),('state', '=', 'reached_store'),('state', '=', 'in_service'),('state', '=', 'service_completed'),('state', '=', 'qc'),('state', '=', 'qc_rejected'),('state', '=', 'qc_approved'),('state', '=', 'out_for_delivery'),('state', '=', 'delivered')]}" />
+                        <button name="action_assign" string="Assign Driver" type="object" class="btn btn-primary" attrs="{'invisible': [('state','!=', 'sale')]}"/>
+                        <!-- <button name="action_pick_up" string="Pick Up" type="object" class="btn btn-primary" attrs="{'invisible':  [('state','!=', 'assign_to_pick_up')]}"/> -->
+                        <button name="action_reach_store" string="Reached Store" type="object" class="btn btn-primary" attrs="{'invisible':  [('state','!=', 'picked')]}"/>
+                        <button name="action_service_test" string="In Service" type="object" class="btn btn-primary" attrs="{'invisible': [('state','!=', 'reached_store')]}"/>
+                        <button name="action_service_complete" string="Service Completed" type="object" class="btn btn-primary" attrs="{'invisible': [('state','!=', 'in_service')]}"/>
+                        <button name="action_quality" string="QC" type="object" class="btn btn-primary" attrs="{'invisible': [('state','!=', 'service_completed')]}"/>
+                        <button name="action_quality_approved" string="QC Approved" type="object" class="btn btn-primary" attrs="{'invisible': [('state','!=', 'qc')]}"/>
+                        <!-- <button name="action_quality_rejected" string="QC Rejected" type="object" class="btn btn-primary" attrs="{'invisible': [('state','!=', 'qc')]}"/> -->
+                        <button name="action_reservice" string="Re-Service" type="object" class="btn btn-primary" attrs="{'invisible': [('state','!=', 'qc_rejected')]}"/>
+                        <button name="action_out_for_delivery" string="Out For Delivery " type="object" class="btn btn-primary" attrs="{'invisible': [('state','!=', 'qc_approved')]}"/>
+                        <button name="action_deliver" string="Delivered" type="object" class="btn btn-primary" attrs="{'invisible': [('state','!=', 'out_for_delivery')]}"/>
+
+
+
+
+
+
+                        <field name="state" widget="statusbar" statusbar_visible="assign_to_pick_up,picked,reached_store,in_service,service_completed,qc,out_for_delivery,delivered"/>
+                </header>
+                </xpath>
+                <xpath expr="//button[@name='action_view_delivery']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_out_of_delivery', '=', False)]}</attribute>
+                    <attribute name="groups">pragmatic_laundry_management.group_admin</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_shipping_id']" position="before">
+                    <field name="driver_id"  domain="[('is_driver', '=', 'True')]" options='{"no_create": True}' />
+                    <field name="qc_id" domain="[('is_qc', '=', 'True')]" options='{"no_create": True}'/>
+                    <field name="cleaner_id" domain="[('is_cleaner', '=', 'True')]" options='{"no_create": True}' />
+                    <field name="is_out_of_delivery" invisible="1"/>
+               </xpath>
+               <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="domain">[('is_admin', '!=', True),('is_driver', '!=', True),('is_cleaner', '!=', True),('is_qc', '!=', True)]</attribute>
+                </xpath>
+
+               <xpath expr="//button[@name='action_view_delivery']" position="before">
+                    <button name="action_qc_order" type="object" class="oe_stat_button" icon="fa-users" groups="pragmatic_laundry_management.group_admin" attrs="{'invisible':  ['|','|','|','|','|','|',('state','=', 'draft'),('state','=','sale'),('state','=','assign_to_pick_up'),('state','=','picked'),('state','=','reached_store'),('state','=','in_service'),('state','=','service_completed')]}">
+                        <div class="o_stat_info" style='margin-left:4px'>
+                            <span class="o_stat_text">QC Orders</span>
+                        </div>
+                    </button>
+                </xpath>
+
+                <xpath expr="//button[@name='action_view_delivery']" position="after">
+                    <button name="action_service_order" type="object" class="oe_stat_button" icon="fa-retweet" groups="pragmatic_laundry_management.group_admin" attrs="{'invisible':  ['|','|','|','|',('state','=', 'draft'),('state','=','sale'),('state','=','assign_to_pick_up'),('state','=','picked'),('state','=','reached_store')]}">
+                        <div class="o_stat_info" style='margin-left:4px'>
+                            <span class="o_stat_text">Service Orders</span>
+                        </div>
+                    </button>
+                    </xpath>
+
+               <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_transaction_order" type="object" class="oe_stat_button" groups="pragmatic_laundry_management.group_admin" attrs="{'invisible':  ['|',('state','=', 'draft'),('state','=', 'sale')]}">
+                    <i title='fa fa-truck' class="fa fa-truck" style="transform: scaleX(-1); font-size: 24px;"/>
+                    <div class="o_stat_info" style='margin-left:4px'>
+
+                        <span class="o_stat_text">Picking</span>
+
+                    </div>
+                </button>
+                </xpath>
+               </field>
+        </record>
+
+        <record id="view_sales_order_laundry_filter_ecommerce" model="ir.ui.view">
+            <field name="name">sale.order.ecommerce.search.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='to_invoice']" position="after">
+                    <filter string="Assign to Pick Up" name="assign_to_pick_up" domain="[('state', '=' ,'assign_to_pick_up')]"/>
+                    <separator/>
+                    <filter string="Reached Store" name="reached_store" domain="[('state', '=', 'reached_store')]"/>
+                    <separator/>
+                    <filter string="In Service" name="in_service" domain="[('state', '=', 'in_service')]"/>
+                    <separator/>
+                    <filter string="Service Completed" name="service_completed" domain="[('state', '=', 'service_completed')]"/>
+                    <separator/>
+                    <filter string="QC" name="qc" domain="[('state', '=', 'qc')]"/>
+                    <separator/>
+                    <filter string="Out For Delivery" name="out_for_delivery" domain="[('state', '=', 'out_for_delivery')]"/>
+                    <separator/>
+                    <filter string="Delivered" name="delivered" domain="[('state', '=', 'delivered')]"/>
+                    <separator/>
+
+                 <filter name="to_invoice" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                 </filter>
+                 <filter name="upselling" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                 </filter>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="laundry_action_orders_ecommerce" model="ir.actions.act_window">
+            <field name="name">Laundry Orders</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form,kanban,activity</field>
+            <field name="domain">[]</field>
+            <field name="context">{'show_sale': True, 'search_default_order_confirmed': 1, 'search_default_from_website': 1}</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    There is no confirmed order from the website
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+    </odoo>

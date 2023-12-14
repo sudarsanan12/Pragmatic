@@ -1,0 +1,66 @@
+
+<odoo>
+    <data>
+            <record model="ir.ui.view" id="view_stock_quant_tree_editable">
+        <field name="name">stock.quant.tree.editable</field>
+        <field name="model">stock.quant</field>
+        <field eval="5" name="priority"/>
+        <field name="arch" type="xml">
+            <tree editable="bottom"
+                  create="0" edit="1" js_class="inventory_report_list"
+                  sample="1">
+                <field name="create_date" invisible="1"/>
+                <field name="write_date" invisible="1"/>
+                <field name="id" invisible="1"/>
+                <field name="tracking" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+                <field name="location_id" attrs="{'readonly': [('id', '!=', False)]}"
+                       invisible="context.get('hide_location', False)"
+                       options="{'no_create': True}"/>
+                <field name="storage_category_id" optional="hide"/>
+                <field name="product_id" attrs="{'readonly': [('id', '!=', False)]}"
+                       readonly="context.get('single_product', False)" force_save="1"
+                       options="{'no_create': True}" widget="many2one"/>
+                <field name="product_categ_id" optional="hide"/>
+                <field name='company_id' groups="base.group_multi_company" optional="hidden"/>
+                <field name="package_id" groups="stock.group_tracking_lot"
+                       attrs="{'readonly': [('id', '!=', False)]}"/>
+                <field name="lot_id" groups="stock.group_production_lot"
+                       attrs="{
+                            'readonly': ['|', ('id', '!=', False), ('tracking', 'not in', ['serial', 'lot'])]
+                       }"
+                       invisible="context.get('hide_lot', False)"
+                       context="{'default_product_id': product_id, 'default_company_id': company_id}"/>
+                <field name="owner_id" groups="stock.group_tracking_owner"
+                       attrs="{'readonly': [('id', '!=', False)]}"
+                       options="{'no_create': True}"/>
+                <field name="inventory_quantity_auto_apply" string="On Hand Quantity" readonly="0" sum="Total On Hand"/>
+                <button name="%(stock.action_view_inventory_tree)d" title="Inventory Adjustment" type="action" class="btn-link" icon="fa-pencil" context="{'search_default_product_id': product_id, 'default_product_id': product_id}"/>
+                <field name="reserved_quantity" optional="show" sum="Total Reserved"/>
+                <field name="product_uom_id" string="Unit" groups="uom.group_uom"/>
+                <button name="action_view_stock_moves" string="History" type="object" class="btn-link" icon="fa-history"/>
+                <button name="action_view_orderpoints" string="Replenishment" type="object" context="{'default_product_id': product_id, 'search_default_location_id': location_id}" class="btn-link" icon="fa-refresh"/>
+            </tree>
+        </field>
+    </record>
+
+
+        <record id="action_stock1" model="ir.actions.act_window">
+            <field name="name">Inventory</field>
+            <field name="res_model">stock.quant</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="pragmatic_laundry_management.view_stock_quant_tree_editable"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new
+                </p>
+            </field>
+        </record>
+        <menuitem
+            name="Inventory"
+            id="stock1_main_menu"
+            parent="laundry_management_menu_root"
+            action="action_stock1"
+            sequence="9"/>
+    </data>
+</odoo>

@@ -1,0 +1,245 @@
+<odoo>
+  <data>
+
+
+
+    <!-- Top menu item -->
+
+        <menuitem 
+                name="Laundry Dashboard" 
+                id="laundry_management_menu_root" 
+                web_icon="pragmatic_laundry_management/static/description/icon.png"
+                groups="pragmatic_laundry_management.group_admin"
+                sequence="1"/>
+        <menuitem 
+                name="Driver Dashboard" 
+                id="driver_dashboard_menu_root"
+                groups="pragmatic_laundry_management.group_driver"
+                sequence="2"/>
+                
+        <menuitem name="QC Dashboard" 
+                id="laundry_management_qc_menu" 
+                groups="pragmatic_laundry_management.group_qc"
+                sequence="3"/>
+
+        
+    <menuitem name="Service Dashboard"
+            id="main_menu_cleaner_dashboard"
+            groups="pragmatic_laundry_management.group_cleaner"
+            sequence="4"/>
+    
+
+    
+    
+    <!-- menu categories -->
+
+
+
+    <menuitem 
+            name="Laundry Orders" 
+            id="laundry_menu" 
+            parent="laundry_management_menu_root" 
+            
+            sequence="1"/>
+
+
+        
+
+
+
+
+
+    <menuitem
+            name="Customer"
+            id="customer_main_menu"
+            parent="laundry_management_menu_root"
+            action="action_customer"
+            sequence="2"/>
+
+    <menuitem 
+            name="Transfers" 
+            id="transfer_main_menu" 
+            parent="laundry_management_menu_root" 
+            sequence="3"/>
+
+    <menuitem 
+            name="Review" 
+            id="review_main_menu" 
+            parent="laundry_management_menu_root" 
+            action="laundry_review_action" 
+            sequence="4"/>
+
+   
+    <menuitem name="Complaint" 
+            id="complaint_menu" 
+            action="action_complaint" 
+            parent="laundry_management_menu_root" 
+            sequence="5"/>  
+
+
+    <menuitem 
+            name="Employee" 
+            id="employee_main_menu" 
+            parent="laundry_management_menu_root" 
+            sequence="6"/>
+    
+    
+    
+    
+    <menuitem name="QC"
+              id="qc_admin_main_menu" 
+              parent="laundry_management_menu_root" 
+              action="qc_action" 
+              sequence="10"/>
+
+        <menuitem name="Configuration"
+              id="main_menu_configuration"
+              parent="laundry_management_menu_root"
+              sequence="10"/>
+
+        
+
+
+
+
+    <menuitem name="QC"
+              id="qc_main_menu_dashboard" 
+              parent="laundry_management_qc_menu" 
+              action="qc_action" 
+              sequence="1"/>
+
+    <menuitem name="Service"
+              id="main_menu_service"
+              parent="laundry_management_menu_root"
+              action="action_service"
+              sequence="7"/>
+
+
+    <menuitem name="Sercice person"
+              id="main_menu_cleaner"
+              parent="main_menu_cleaner_dashboard"
+              action="action_cleaner_dashboard"
+              sequence="8"/>
+
+
+       
+
+            
+
+    
+
+
+
+        <!--sub menu categories -->
+
+    <menuitem name="Admin"
+        id="admin_main_menu"
+        parent="employee_main_menu" 
+        action="action_admin" 
+        sequence="1"/>
+    <menuitem name="Driver" 
+        id="driver_main_menu" 
+        parent="employee_main_menu" 
+        action="action_driver" 
+        sequence="2"/>
+    <menuitem name="QC" 
+        id="qc_main_menu" 
+        parent="employee_main_menu" 
+        action="action_qc" 
+        sequence="3"/>
+
+    <menuitem name="Service person" 
+        id="cleaner_main_menu" 
+        parent="employee_main_menu" 
+        action="action_cleaner" 
+        sequence="4"/>
+    <menuitem name="Incoming"
+        id="incoming_main_menu"
+        parent="transfer_main_menu" 
+        action="trasfer_incoming_action" 
+        sequence="1"/>
+
+    <menuitem name="Outgoing" 
+        id="outgoing_main_menu" 
+        parent="transfer_main_menu" 
+        action="trasfer_outgoing_action" 
+        sequence="2"/>
+
+    <menuitem name="Dashboard" 
+        id="driver_dash_main_menu" 
+        parent="driver_dashboard_menu_root"
+        sequence="1"/>
+
+    <menuitem name="Incoming"
+        id="incoming_main_menu_driver"
+        parent="driver_dash_main_menu" 
+        action="trasfer_incoming_action_driver" 
+        sequence="1"/>
+
+    <menuitem name="Outgoing" 
+        id="outgoing_main_menu_driver" 
+        parent="driver_dash_main_menu" 
+        action="trasfer_outgoing_action_driver" 
+        sequence="2"/>
+
+    <menuitem name="Order History" 
+        id="driver_order_history_main_menu" 
+        parent="driver_dashboard_menu_root"
+        action="action_driver_order_history"
+        sequence="2"/>
+    <menuitem name="All Order" 
+        id="driver_all_order_main_menu" 
+        parent="driver_dashboard_menu_root"
+        action="action_driver_all_orders"
+        sequence="3"/>
+
+
+<menuitem name="Company" 
+        id="company_main_sub_menu" 
+        parent="main_menu_configuration"
+        action='base.action_res_company_form'
+        sequence="1"/>
+
+<menuitem 
+        name="Emails" 
+        id="email_main_sub_menu" 
+        parent="main_menu_configuration"
+        action='mail.action_view_mail_mail'
+        sequence="2"/>
+
+
+<menuitem 
+        name="Outgoing Mail server" 
+        id="outgoing_mail_server_sub_menu" 
+        parent="main_menu_configuration"
+        action='base.action_ir_mail_server_list'
+        sequence="3"/>
+<menuitem 
+        name="Payment Providers" 
+        id="payment_provider_sub_menu" 
+        parent="main_menu_configuration"
+        action='payment.action_payment_provider'
+        sequence="4"/>
+
+<menuitem name="Laundry Orders" 
+        id="laundry_sub_menu" 
+        parent="laundry_menu" 
+        action="laundry_action_orders_ecommerce" 
+        sequence="1"/>
+
+    <menuitem name="Product" 
+        id="product_sub_menu" 
+        parent="laundry_menu" 
+        action="stock.product_template_action_product" 
+        sequence="2"/>
+
+
+        <menuitem name="Product Variants" 
+        id="product_variants_sub_menu" 
+        parent="laundry_menu" 
+        action="stock.stock_product_normal_action" 
+        sequence="3"/>
+
+    
+    </data>
+</odoo>
