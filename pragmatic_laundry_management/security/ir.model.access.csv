@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_laundry_management_qc_dashboard,laundry_management.qc,model_laundry_management_qc,,1,1,1,1
+access_laundry_management_qc_wizard,laundry_management.qc.wizard,model_laundry_management_qc_wizard,,1,1,1,1
+access_laundry_management_driver_delivery_wizard,laundry_management.driver.delivery.wizard,model_laundry_management_driver_delivery_wizard,,1,1,1,1
+access_complaint,laundry_management.complaint,model_laundry_management_complaint,,1,1,1,1
+access_complaint_portal,laundry_management.complaint,model_laundry_management_complaint,base.group_portal,1,1,1,1
+access_review,laundry_management.review,model_laundry_management_review,,1,1,1,1
+access_review_portal,laundry_management.review,model_laundry_management_review,base.group_portal,1,1,1,1
+access_service,laundry_management.service,model_laundry_management_service,,1,1,1,1
+
+access_cleaner_dashboad,laundry_management.cleaner,model_laundry_management_cleaner,,1,1,1,1
+
+
+

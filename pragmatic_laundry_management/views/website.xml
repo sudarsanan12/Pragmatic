@@ -1,0 +1,213 @@
+<odoo>
+    <data>
+        <record id="menu_website_page" model="website.menu">
+            <field name="name"></field>
+            <field name="url">/</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">3</field>
+        </record>
+        <template id="website_template">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+                  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+                  crossorigin="anonymous"/>
+            <t t-call="website.layout">
+                <div class="container1 " style=" width:100%;height:100%;">
+                    <div class="container2" style="position: relative;
+  background: url(/pragmatic_laundry_management/static/src/img/hero-bg.png) center bottom no-repeat;
+  background-size: cover;width:100%">
+                        <section id="hero" class="clearfix">
+                            <div class="row container-fluid" style="height:40rem;width: 100%;">
+                                <div id="text" class="hero-info col-md-6 col-xs-12"
+                                     >
+                                    <h2 style="margin:10rem;">
+                                        <h2 style="color:white;text-align:center">Looking for BEST</h2>
+                                        <h2 style="color:white;text-align:center">Laundry service ?</h2>
+                                        <h2 style="color:white;text-align:center">
+                                            <t t-esc="data.name"/>
+                                        </h2>
+                                    </h2>
+
+                                    <div id="centered" >
+                                        <a href="/shop" class="btn "
+                                           style="left:50%;right:50%;background:#fed65d;transition: background-color 0.3s;"
+                                           onmouseover="this.style.backgroundColor='#bae4f4'"
+                                           onmouseout="this.style.backgroundColor='#fed65d'">Get Started
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="image" class="hero-img col-md-6 col-sm-0" style="width:50%;height:25rem;padding-top:4rem">
+                                    <img src="/pragmatic_laundry_management/static/src/img/safelaundry.svg" alt=""
+                                         class="img-fluid" style="height:28rem"/>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                    <!--                    -->
+                    <!--                    -->
+                    <!--                    ABOUT US-->
+                    <!--                    -->
+                    <!--                    -->
+                    <h1 id="head3" style="text-align: center;  margin-top: 6rem;">ABOUT US</h1>
+                    <section class="company-heading intro-type" id="parallax-one">
+                        <!-- Header section -->
+                    </section>
+                    <section
+                            class="story-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding"
+                            id="section1">
+                        <div class="container">
+                            <br></br>
+                            <br></br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="tt-img-main">
+                                        <img class="card-img-top shadow"
+                                             t-attf-src="data:image/png;base64, #{data.experiences_image}"
+                                             alt="" style="height:20rem;width:25rem;border-radius:15px;"/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="red-border"></div>
+                                    <p class="ct-u-size22 ct-u-fontWeight300 marginTop40">
+                                        <h2
+                                                style="    font-weight: 600;
+                                    color: black;
+                                "
+                                                class="head1">Experiences
+                                        </h2>
+                                        <br></br>
+                                        <br></br>
+
+                                        <span t-field="data.experiences"/>
+                                        <!-- Your content goes here -->
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="layout01__content">
+                                <div class="layout01__content-wrapper">
+                                    <div class="title-block">
+                                        <div class="title-block__label"></div>
+                                        <h4 class="title-block__title"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="company-heading intro-type" id="parallax-one">
+                        <!-- Header section -->
+                    </section>
+                    <section
+                            class="story-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding"
+                            id="section1" style="    margin-top: 5rem;
+                    ">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="red-border"></div>
+                                    <p class="ct-u-size22 ct-u-fontWeight300 marginTop40">
+                                        <h2
+                                                style="    font-weight: 600;
+                                    color: black;
+                                "
+                                                class="head1">History
+                                        </h2>
+                                        <br></br>
+                                        <br></br>
+
+                                        <span t-field="data.company_history"/>
+                                        <!-- Your content goes here -->
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="tt-img-main">
+                                        <img class="card-img-top shadow"
+                                             t-attf-src="data:image/png;base64, #{data.history_image}"
+                                             alt="" style="height:20rem;width:25rem;border-radius:15px;"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layout01__content">
+                                <div class="layout01__content-wrapper">
+                                    <div class="title-block">
+                                        <div class="title-block__label"></div>
+                                        <h4 class="title-block__title"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--                    -->
+                    <!--                    -->
+                    <!--services-->
+                    <!--                    -->
+                    <!--                    -->
+                    <section>
+                        <div style="text-align:center; margin:20px">
+                            <h1 style="  margin-top: 6rem;">OUR SERVICES</h1>
+                        </div>
+                    </section>
+                    <section style="  margin-top: 5rem;">
+                        <!--For Page-->
+                        <div class="page" style="margin:20px;">
+                            <!--For Row containing all card-->
+                            <div class="row" style="display: flex">
+                                <t t-foreach="services" t-as="service">
+                                    <!--Card 1-->
+                                    <div class="col-sm-3">
+                                        <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
+                                            <!--Card image-->
+                                            <div class="view view-cascade overlay text-center">
+                                                <img class="card-img-top"
+                                                     t-attf-src="data:image/png;base64, #{service.image}" alt=""
+                                                     style="height:200px;width:300px"/>
+                                                <a>
+                                                    <div class="mask rgba-white-slight"/>
+                                                </a>
+                                            </div>
+                                            <!--Card Body-->
+                                            <div class="card-body card-body-cascade text-center" style="height:200px">
+                                                <!--Card Title-->
+                                                <h4 class="card-title">
+                                                    <strong>
+                                                        <t t-esc="service.name"/>
+                                                    </strong>
+                                                </h4>
+                                                <!-- Card Description-->
+                                                <p class="card-text">
+                                                    <t t-esc="service.description"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+
+            <style>
+                 #centered{
+             display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+                @media (max-width: 768px) {
+                #image {
+                display: none;
+                }
+                #text{
+                padding: 1rem;
+                margin-top:-79px;
+                }
+                .container2{
+                height:270px;
+                }
+            </style>
+
+        </template>
+    </data>
+</odoo>
