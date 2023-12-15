@@ -1,0 +1,91 @@
+<odoo>
+    <data>
+        <record id="seq_stock_management" model="ir.sequence">
+            <field name="name">HostelStock</field>
+            <field name="code">hostel.stock</field>
+            <field name="prefix">Stock</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+        <record id="stock_action" model="ir.actions.act_window">
+            <field name="name">Stocks</field>
+            <field name="res_model">hostel.stock</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Form View -->
+        <record id="stock_action_form" model="ir.ui.view">
+            <field name="name">hostel.stock.form</field>
+            <field name="model">hostel.stock</field>
+            <field name="arch" type="xml">
+                <form string="Stock">
+                    <header>
+                        <button name="update_stock" string="Update Stock" type="object"
+                            attrs="{'invisible':[('status','=','updated')]}" class="btn-primary" />
+                        <field name="status" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="inventory_type" />
+                                <field name="date" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Order Lines" name="order_lines" >
+                                <field name="line_ids">
+
+                                    <tree editable = "bottom">
+                                        <field name="inventory_id" />
+                                        <field name="qty" />
+                                        <field name="uom" />
+                                    </tree>
+                                </field>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="stock_action_tree" model="ir.ui.view">
+            <field name="name">hostel.stock.tree</field>
+            <field name="model">hostel.stock</field>
+            <field name="arch" type="xml">
+                <tree string="Stock">
+                    <field name="inventory_type" />
+                    <field name="date" />
+                    <field name="line_ids" />
+
+                </tree>
+            </field>
+        </record>
+        <record id="inventory_search" model="ir.ui.view">
+          <field name="name">hostel.stock.search</field>
+          <field name="model">hostel.stock</field>
+          <field name="arch" type="xml">
+            <search string="Stock">
+            
+               <field name="inventory_type"/>
+               <field name="date"/>
+              
+               <field name="line_ids"/>
+               <field name="status"/>
+
+ 
+               <filter string="filter by Inventory Type" domain="[('inventory_type' , '=', 'Incom')]" name="inventory_type_filter"/>  
+            
+              <group expand="0" string="Group By">
+                <filter string="inventory_type" name="group_by_inventory_Type" domain="[]" context="{'group_by': 'inventory_type'}"/>
+                
+                </group>
+            </search>
+        </field>
+    </record> 
+
+
+    </data>
+</odoo>

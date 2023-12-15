@@ -1,0 +1,305 @@
+<odoo>
+	<data>
+		<template id="register_form" name="Register">
+			<t t-call="website.layout">
+				<form role="form1" method="POST" action="/register_submit">
+					<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+					<section class="h-100 bg-dark">
+					<!-- <div class="container py-5 h-100"> -->
+						<!-- <div class="row d-flex justify-content-center align-items-center h-100"> -->
+							<!-- <div class="col"> -->
+								<div class="card card-registration my-4">
+									<div class="row g-0">
+										<div class="col-xl-6 d-none d-xl-block">
+											<img src="https://www.careerguide.com/career/wp-content/uploads/2021/04/hostel-line-concept-vector-round-web-banner-best-modern-thin-icons-three-colors-big-letters-as-caption-pictographs-92282421.jpg" 
+											alt="Sample photo" class="img-fluid" style=" width:1000px !important; height:1000px !important;"/>
+										</div>
+										<div class="col-xl-6 ">
+											<div class="card-body p-md-5 text-black">
+												<h3 class="mb-5 text-uppercase font-weight-bold border-top border border-0 text-center rounded">
+						
+													Student registration form
+												</h3>
+												<div class="row">
+													<div class="col-md-6 mb-4">
+														<div class="form-outline">
+															<label class="form-label" for="form3Example1m">
+																First Name
+															</label>
+
+															<input type="text" id="form3Example1m" name="name" class="form-control " autocomplete="off" required="" placeholder="Enter first name"/>
+															
+														</div>
+													</div>
+													<div class="col-md-6 mb-1">
+														<div class="form-outline">
+															<label class="form-label" for="form3Example1n">
+																Last Name
+															</label>															
+															<input type="text" id="form3Example1n" name="last_name" class="form-control " autocomplete="off" required="" placeholder="Enter last name"/>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6 mb-4">
+														<div class="form-outline">
+															<label class="form-label" for="form3Example1m">
+																Father's Name
+															</label>
+															<input type="text" id="form3Example1m" name="father_name" class="form-control " autocomplete="off" required="" placeholder="Enter father name"/>
+														</div>
+													</div>
+													<div class="col-md-6 mb-4">
+														<div class="form-outline">
+															<label class="form-label" for="form3Example1n">
+																Mother's Name
+															</label>
+															<input type="text" id="form3Example1n" name="mother_name" class="form-control " autocomplete="off" required="" placeholder="Enter mother name"/>
+														</div>
+													</div>
+												</div>
+											<div class="row">
+											  <div class="col-md-6 mb-4">
+												<div class="form-outline">
+													<label class="form-label" for="form3Example9">
+														DOB
+													</label>
+													<input type="date" id="form3Example9" t-att-value="date_of_birth" name="date_of_birth" class="form-control" />
+												</div>
+											 </div>
+											 <div class="col-md-6 mb-4">
+												  <div class="form-outline">
+													<label class="form-check-label" for="gender">
+														Gender
+													</label><br></br>
+													<select class="select form-control mt-2" name="gender" required="">
+														<option value="">
+															--Select Gender--
+														</option>
+														<option value="Male">
+															Male
+														</option>
+														<option value="Female">
+															Female
+														</option>
+														<option value="Other">
+															Other
+														</option>
+													</select>
+												</div>
+											  </div>
+											</div>
+												<div class="form-outline mb-1">
+													<label class="form-label" for="form3Example97">
+														Email ID
+													</label>
+													<input type="email" id="form3Example97" name="email" class="form-control " autocomplete="off" required="" placeholder="Enter Email ID" pattern='^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*(\.[A-Za-z]{2,4})$'/>
+											
+												</div>
+												<div class="form-outline mb-1">
+													<label class="form-label" for="form3Example97">
+														Permanent Address
+													</label>
+
+													<input type="text" id="form3Example97" name="permanent_address" class="form-control " autocomplete="off" required="" placeholder="Enter permanent address"/>
+													
+												</div>
+											
+												<div class="row">
+												<div class="col-md-6 mb-1">
+												<div class="form-outline mb-1">
+													<label class="form-label" for="form3Example9">
+														City
+													</label>
+													<input type="city" id="form3Example9" name="city" class="form-control" autocomplete="off" required="" placeholder="Enter city"/>
+												</div>
+											   </div>
+
+												<div class="col-md-6 mb-4">
+												<div class="form-outline">
+										           <label class="form-check-label" for="State">
+														State
+													</label><br></br>
+													<select class="select form-control mt-2" name="state" required="">
+														<option value="">
+															--Select State--
+														</option>
+														<option value="maharashtra">
+															Maharashtra
+														</option>
+														<option value="uttarakhand">
+															Uttarakhand
+														</option>
+														<option value="panjab">
+															Panjab
+														</option>
+														<option value="kerala">
+															Kerala
+														</option>
+														<option value="andhra_pradesh">
+															Andhra Pradesh
+														</option>
+														<option value="arunachal_pradesh">
+															Arunachal Pradesh
+														</option>
+														<option value="assam">
+															Assam
+														</option>
+														<option value="bihar">
+															Bihar
+														</option>
+														<option value="chhattisgarh">
+															Chhattisgarh
+														</option>
+														<option value="manipur">
+															Manipur
+														</option>
+														<option value="goa">
+															Goa
+														</option>
+														<option value="haryana">
+															Haryana
+														</option>
+														<option value="gujarat">
+															Gujarat
+														</option>
+														<option value="jharkhand">
+															Jharkhand
+														</option>
+														<option value="karnataka">
+															Karnataka
+														</option>
+														<option value="west_bengal">
+															West Bengal
+														</option>
+														<option value="madhya_pradesh">
+															Madhya Pradesh
+														</option>
+														<option value="uttar_pradesh">
+															Uttar Pradesh
+														</option>
+														<option value="tripura">
+															Tripura
+														</option>
+														<option value="telangana">
+															Telangana
+														</option>
+														<option value="tamil_nadu">
+															Tamil Nadu
+														</option>
+														<option value="sikkim">
+															Sikkim
+														</option>
+														<option value="rajasthan">
+															Rajasthan
+														</option>
+														<option value="odisha">
+															Odisha
+														</option>
+														<option value="nagaland">
+															Nagaland
+														</option>
+														<option value="meghalaya">
+															Meghalaya
+														</option>
+														<option value="mizoram">
+															Mizoram
+														</option>
+														<option value="himachal	chal_pradesh">
+														    Himachal Pradesh
+														</option>
+														
+
+													</select>
+												</div>
+												</div>
+											</div>
+											
+											<div class="row">
+											 <div class="col-md-6 mb-1">
+												<div class="form-outline mb-1">
+													<label class="form-label" for="form3Example97">
+														Student Contact No
+													</label>
+													<input type="text" id="form3Example97" name="contact" class="form-control " autocomplete="off" required="" pattern="[789][0-9]{9}" placeholder="Enter contact no"/>
+												
+												</div>
+											  </div>
+												<div class="col-md-6 mb-1">
+												<div class="form-outline mb-1">
+													<label class="form-label" for="form3Example99">
+														Parent Contact No
+													</label>
+
+													<input type="text" id="form3Example99" name="parent_contact" class="form-control " autocomplete="off" required="" pattern="[789][0-9]{9}" placeholder="Enter parent contact no"/>
+													
+												</div>
+												</div>
+											</div>
+												<div class="form-outline mb-1">
+													<label class="form-label" for="form3Example99">
+														Course
+													</label>
+
+													<input type="text" id="form3Example99" name="course" class="form-control " autocomplete="off" required="" placeholder="Enter course"/>
+
+												</div>
+										   <div class="row">
+											  <div class="col-md-6 mb-1">
+												<div class="form-outline mb-1">
+													<label class="form-label" for="form3Example97">
+														Semester	
+													</label>
+
+													<input type="text" id="form3Example97" name="semester" class="form-control " autocomplete="off" required="" placeholder="Enter semester"/>
+
+												
+												</div>
+											  </div>
+											   <div class="col-md-6 mb-1">
+												<div class="form-outline mb-1">
+													<label class="form-label" for="form3Example99">
+														Year Of Study
+													</label>
+													<input type="number" id="form3Example97" name="year" class="form-control " autocomplete="off"	 required="" min="2023" max="2030"/>
+												
+												</div>
+											 </div>
+										    </div>
+										
+							
+												<div class="d-flex justify-content-end pt-3">
+													<button type="reset" class="btn btn-light btn-lg">
+														Reset all
+													</button>
+													<button type="submit" class="btn btn-warning btn-lg ms-2">
+														Submit form
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							<!-- </div> -->
+						<!-- </div> -->
+					<!-- </div> -->
+				</section>
+				</form>
+			</t>
+		</template>
+
+		<template id="registration_success_template1" name="Register Success">
+        <t t-call="website.layout">
+			<div style="padding-left:500px">
+				<div align="center" style="width:500px;">
+					<img src="https://freepngimg.com/save/87855-checkbox-leaf-icons-mark-computer-grass-check/1000x1000" 
+											style="width:20%; height:20%;" />
+					<h2 align="center" style="font-size: 20px; font-weight: bold;">Registration is successful!</h2>
+				</div>
+			</div>
+        </t>
+    </template>
+   
+
+	</data>
+</odoo>

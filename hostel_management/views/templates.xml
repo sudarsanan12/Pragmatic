@@ -1,0 +1,269 @@
+<odoo>
+	<data>
+		<record id="website_menu_complaint_registration" model="website.menu">
+			<field name="name">Complaint Registration</field>
+			<field name="url">/complaint</field>
+			<field name="parent_id" ref="website.main_menu" />
+			<field name="sequence" type="int">40</field>
+		</record>
+		<template id="website_template_inherit"
+			inherit_id="website.template_header_default_oe_structure_header_default_1">
+			<xpath expr="//section[@data-snippet='s_text_block' and @data-name='Text']"
+				position="replace" />
+
+		</template>
+		<template id="complaint_registration_form">
+			<t t-call="website.layout">
+				<form id="request_form" method="POST" role="form" action='/complaint_submit'>
+					<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+					<section>
+						<div class="container py-5 h-100">
+							<div class="row d-flex justify-content-center align-items-center h-100">
+								<div class="col">
+									<div class="card card-registration my-4">
+										<div class="row g-0">
+											<div class="col-xl-6 d-none d-xl-block">
+												<img
+													src="/hostel_management/static/img/helpdesk_img.png"
+													alt="Sample photo" class="img-fluid"
+													style="width:100%; height:90%;" />
+											</div>
+											<div class="col-xl-6">
+												<div class="card-body p-md-5 text-black">
+													<h3 style="font-size: 30px; font-weight: bold;">Complaint Registration Form
+													</h3>
+													<div class="row">
+														<div class="col-md-6 mb-4">
+															<div class="form-outline">
+																<label class="form-label"
+																	for="form3Example1m">Student ID:</label>
+																<input type="text"
+																	id="helpdeskExample1m"
+																	name="student_id"
+																	class="form-control form-control-lg" />
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6 mb-4">
+															<div class="form-outline">
+																<label class="form-label"
+																	for="form3Example1m">Complaint Description:</label>
+																<textarea id="form3Example1m"
+																	name="complaint_description"
+																	class="form-control form-control-lg"
+																	rows="2" cols="10" />
+															</div>
+														</div>
+													</div>
+													<div>
+														<div class="row">
+															<div class="col">
+																<button type="submit"
+																	class="btn btn-primary">Submit</button>
+															</div>
+														</div>
+														<div class="row mt-3">
+															<div class="col">
+																<button class="btn btn-primary"
+																	type="reset">Reset</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</form>
+			</t>
+		</template>
+
+
+		<template id="registration_success_template" name="Registration Success">
+			<t t-call="website.layout">
+				<div style="padding-left:500px">
+					<div align="center" style="width:500px;">
+						<img src="/hostel_management/static/img/success_icon.png"
+							style="width:20%; height:20%;" />
+						<h2 align="center" style="font-size: 20px; font-weight: bold;">Complaint
+							Registration is successful!</h2>
+					</div>
+				</div>
+			</t>
+		</template>
+
+
+		<template id="registration_invalid_template" name="Registration invalid">
+			<t t-call="website.layout">
+				<div style="padding-left:500px">
+					<div align="center" style="width:500px;">
+						<img src="/hostel_management/static/img/invalid_icon.png"
+							style="width:20%; height:20%;" />
+						<h2 align="center" style="font-size: 20px; font-weight: bold;">Invalid
+							Student ID!</h2>
+					</div>
+				</div>
+			</t>
+		</template>
+
+
+		<record id="student_contact" model="website.menu">
+			<field name="name">Contact</field>
+			<field name="url">/contact</field>
+			<field name="parent_id" ref="website.main_menu" />
+			<field name="sequence">50</field>
+		</record>
+
+		<template id="contact_form">
+			<style>
+				.container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				}
+
+				.form-wrapper {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: flex-start;
+				padding-right: 20px;
+				}
+
+				.form-wrapper form {
+				margin-top: 20px;
+				margin-left: 20px;
+				}
+
+				.image-wrapper {
+				text-align: right;
+				}
+
+
+				@media (max-width: 768px) {
+				.container {
+				flex-direction: column;
+				}
+
+				.form-wrapper,
+				.image-wrapper {
+				width: 100%;
+				}
+
+				.form-wrapper {
+				padding-right: 0;
+				margin-bottom: 20px;
+				}
+
+				.image-wrapper {
+				text-align: center;
+				}
+				}
+			</style>
+			<t t-call="website.layout">
+				<div class="container">
+					<div class="form-wrapper">
+						<form method="POST" role="form" action="/contact_submit">
+							<input type="hidden" name="csrf_token"
+								t-att-value="request.csrf_token()" />
+							<label class="col-form-label col-sm-auto s_website_form_label">
+								<span class="s_website_form_label_content">
+									Name
+								</span>
+							</label>
+							<input type="text" class="form-control s_website_form_input" name="name"
+								style="width: 600px" />
+							<label class="col-form-label col-sm-auto s_website_form_label">
+								<span class="s_website_form_label_content">
+									Phone
+								</span>
+							</label>
+							<input type="text" class="form-control s_website_form_input"
+								name="phone" style="width: 600px" />
+							<label class="col-form-label col-sm-auto s_website_form_label">
+								<span class="s_website_form_label_content">
+									Email
+								</span>
+							</label>
+							<input type="email" class="form-control s_website_form_input"
+								name="email" style="width: 600px" />
+							<label class="col-form-label col-sm-auto s_website_form_label">
+								<span class="s_website_form_label_content">
+									Subject
+								</span>
+							</label>
+							<input type="text" class="form-control s_website_form_input"
+								name="subject" style="width: 600px" />
+							<label class="col-form-label col-sm-auto s_website_form_label">
+								<span class="s_website_form_label_content">
+									Question
+								</span>
+							</label>
+							<input type="textarea" class="form-control s_website_form_input"
+								name="question" style="width: 600px; height:100px" />
+							<br>
+							</br>
+							<center>
+								<div>
+									<button type="submit" class="btn btn-primary">
+										Submit
+									</button>
+								</div>
+							</center>
+							<br>
+							</br>
+						</form>
+					</div>
+					<div class="image-wrapper">
+						<img src="/hostel_management/static/img/contact.png" alt="Image"
+							class="img-fluid"
+							style="max-width: 700px; max-height: 700px; margin-bottom: 10px;" />
+					</div>
+				</div>
+			</t>
+		</template>
+		<template id="contact_success_template" name="Contact Success">
+			<t t-call="website.layout">
+				<style>
+					.container {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					}
+
+					.content {
+					text-align: center;
+					}
+
+					.image {
+					width: 150px;
+					height: 150px;
+					}
+
+					.message {
+					font-size: 30px;
+					font-weight: bold;
+					}
+				</style>
+				<br>
+				</br>
+				<br>
+				</br>
+				<div class="container">
+					<div class="content">
+						<img class="image"
+							src="https://freepngimg.com/save/87855-checkbox-leaf-icons-mark-computer-grass-check/1000x1000" />
+						<h2 class="message">
+							We will get back to you
+						</h2>
+					</div>
+				</div>
+			</t>
+		</template>
+	</data>
+</odoo>

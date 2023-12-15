@@ -1,0 +1,118 @@
+<odoo>
+  <data>
+  
+    <record id="student_action_tree" model="ir.ui.view">
+           <field name="name">hostel.student.tree</field>
+           <field name="model">hostel.student</field>
+           <field name="arch" type="xml">
+            <tree string="student">
+               <field name="sequence"></field>
+               <field name="name"/>
+               <field name="last_name"/>
+               <field name="contact"/>
+               <field name="email"/>
+               <field name="gender"/>
+               <field name="date_of_birth"/>  
+               <!-- <field name="mother_name"/>
+               <field name="father_name"/> -->
+               <field name="parent_contact"/>   
+               <field name="permanent_address"/>
+               <!-- <field name="city"/>
+               <field name="state"/>     
+               <field name="course"/> 
+               <field name="year"/>  
+               <field name="semester"/> 
+               <field name="space"/>    -->
+
+          
+                  
+           
+               
+            </tree>
+          </field>
+    </record>
+    <record id="school_student_form" model="ir.ui.view">
+          <field name="name">hostel.student.form</field>
+          <field name="model">hostel.student</field>
+          <field name="arch" type="xml">
+            <form string="Student">
+
+            <header>
+						<button name ="confirm" groups="hostel_management.admin_group" string = "Confirm" type ="object" attrs="{'invisible': [('states','=', 'confirmed')]}" class="btn-primary"/>
+            <button name ="reject" groups="hostel_management.admin_group" string = "Reject" type ="object" attrs="{'invisible': [('states','=', 'rejected')]}" class="btn-primary"/>
+            <field name="states" widget="statusbar" />
+					</header>
+             <sheet>
+             <div class="oe_title">
+                        <h1>
+                            <field name="sequence" readonly="1"/>
+                        </h1>
+                </div>
+             <group>
+               <group>
+              
+               <field name="name"/>
+               <field name="last_name"/>
+               <field name="contact"/>
+               <field name="email"/>
+               <field name="date_of_birth"/>
+               <field name="mother_name"/>  
+               <field name="father_name"/>  
+               <field name="gender"/> 
+               <field name="semester"/>               
+              </group>
+              <group>
+              <field name="permanent_address"/>
+              <field name="city"/>  
+                <field name="state"/> 
+                <field name="parent_contact"/>
+                <field name="year"/>
+                <field name="course"/>      
+              </group>
+              <group >
+                  <field name="make_visible" invisible="1"/>
+                  <field name="user_id" attrs="{'invisible': [('make_visible','=', False)]}"/>
+              </group>
+            </group>
+            </sheet>
+            </form>
+          </field>
+    </record>
+   
+    
+   <record id="hostel_student_search" model="ir.ui.view">
+          <field name="name">hostel.student.search</field>
+          <field name="model">hostel.student</field>
+          <field name="arch" type="xml">
+            <search string="Student">
+               <field name="name"/>
+               <field name="last_name"/>
+               <field name="contact"/>
+               <field name="email"/>
+               <field name="gender"/>
+               <field name="date_of_birth"/>  
+               <field name="mother_name"/>
+               <field name="father_name"/>
+               <field name="parent_contact"/>   
+               <field name="permanent_address"/>
+               <field name="city"/>
+               <field name="state"/>
+               <filter string="filter by Course" domain="[('course' , '=', 'chemistry')]" name="student_filter"/>  
+               <filter string="filter by Date of Birth"  date="date_of_birth" default_period="this_year" name="filter_date_of_birth"/>
+                <group expand="0" string="Group By">
+                    <filter string="gender" name="group_by_gender" domain="[]" context="{'group_by': 'gender'}"/>
+                    <filter string="states" name="group_by_state" domain="[]" context="{'group_by': 'states'}"/>
+                </group>
+            </search>
+        </field>
+    </record> 
+    <record id="student_action" model="ir.actions.act_window">
+           <field name="name">Student Registration</field>
+           <field name="res_model">hostel.student</field>
+           <field name="view_mode">tree,form</field>
+			    <field name="search_view_id" ref= "hostel_student_search" />
+      </record>
+    
+  </data>
+</odoo>
+   

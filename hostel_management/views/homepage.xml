@@ -1,0 +1,458 @@
+<odoo>
+
+<record id="menu_home_website" model="website.menu">
+        <field name="name">Home</field>
+        <field name="url">/</field>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence">1</field>
+</record>
+<template id="home" name="Home">
+<t name="Homepage" t-name="website.homepage1">
+  <t t-call="website.layout">
+    <t t-set="pageName" t-value="'homepage'"/>
+    <div id="wrap" class="oe_structure oe_empty">
+      <section class="s_cover bg-black-50 pt96 o_colored_level s_parallax_no_overflow_hidden pb256 oe_img_bg" data-scroll-background-ratio="0" data-snippet="s_cover" data-name="Cover" style="background-position: 100% 34.8192%; background-image: url(&quot;hostel_management/static/img/wall1.jpg&quot;);" data-original-id="369" data-original-src="/web/image/369-edcab230/shobhit-sharma-8TrcnRMap90-unsplash%20%281%29.jpg" data-mimetype="image/jpeg" data-quality="100">
+        <div class="s_allow_columns container">
+          <h1 style="text-align: center;">
+            <span style="color: rgb(252, 252, 252); font-size: 62px;">
+              <b>Another Home,Hostel..!</b>
+            </span>
+          </h1>
+          <p class="lead" style="text-align: center;">
+            <b>Good hostel life is a fun phase of a lifetime&amp;nbsp;</b>
+          </p>
+        </div>
+      </section>
+      <section class="s_title o_colored_level pb4 pt32" data-vcss="001" data-snippet="s_title" data-name="Title" style="">
+        <div class="s_allow_columns o_container_small">
+          <h1 style="text-align: center;">
+            <font style="font-size: 48px;">
+              <b>Rooms</b>
+            </font>
+          </h1>
+        </div>
+      </section>
+      <section class="s_text_block o_colored_level pt0 pb16" data-snippet="s_text_block" data-name="Text" style="">
+        <div class="s_allow_columns container">
+          <p>
+            <span style="color: rgb(34, 34, 34); font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 17px;">A hostel is a home away from your home where friends become your <b>FAMILY</b>.Y</span>
+            <span style="color: rgb(34, 34, 34); font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 17px;">ou can see no one complaining about their hostel life at least after a few weeks.No&amp;nbsp;</span>
+            <span style="color: rgb(34, 34, 34); font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 17px;">&amp;nbsp;</span>
+            <span style="color: rgb(34, 34, 34); font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 17px;">matter which part of the world you are from, when you are at the hostel,&amp;nbsp;</span>
+            <span style="color: rgb(34, 34, 34); font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 17px;">you become a <b>FAMILY</b>!</span>
+            <br/>
+          </p>
+        </div>
+      </section>
+      <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel" style="">
+        <div id="myCarousel1686050935364" class="s_carousel carousel s_carousel_rounded o_colored_level s_parallax_no_overflow_hidden slide oe_img_bg" data-interval="20000" style="background-position: 0% 82.1872%; background-image: url(&quot;/hostel_management/static/img/gall1.jpg&quot;);" data-scroll-background-ratio="0" data-original-id="577" data-original-src="/hostel_management/static/img/gall1.jpg" data-mimetype="image/jpeg" data-resize-width="1242" data-quality="100">
+          <ol class="carousel-indicators o_we_no_overlay">
+            <li data-target="#myCarousel1686050935364" data-slide-to="0" class="active"/>
+            <li data-target="#myCarousel1686050935364" data-slide-to="1"/>
+            <li data-target="#myCarousel1686050935364" data-slide-to="2"/>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item pt152 pb152 o_colored_level active" style="background-position: 0% 76.3136%;" data-name="Slide">
+              <div class="container">
+                <div class="row content">
+                  <div class="carousel-content col-lg-6 o_colored_level pb0" style="">
+                    <h2>
+                      <font style="color: rgb(22, 24, 27); font-size: 62px;">
+                        <b>Clean</b>
+                      </font>
+                    </h2>
+                    <p class="lead">
+                      <span style="color: rgb(22, 24, 27); font-family: &quot;Google Sans&quot;, arial, sans-serif;">A clean environment is always the centre of attention.If you want our environment to be green, keep your surroundings clean.f you want a pollution-free future, prioritise cleanliness.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item pt96 pb96 o_colored_level oe_img_bg" style="background-position: 0% 100%; background-image: url(&quot;/hostel_management/static/img/gall3.jpg&quot;);" data-name="Slide" data-original-id="579" data-original-src="/hostel_management/static/img/gall3.jpg.jpg" data-mimetype="image/jpeg" data-resize-width="1242" data-quality="100">
+              <div class="container">
+                <div class="row content">
+                  <div class="carousel-content text-center pt48 pb40 o_colored_level undefined col-lg-6 offset-lg-4" style="">
+                    <h2 style="font-size: 62px;">Scenery</h2>
+                    <div class="s_hr pt8 pb24" data-snippet="s_hr" data-name="Separator">
+                      <hr class="w-25 mx-auto" style="border-top-width: 1px; border-top-style: solid;"/>
+                    </div>
+                    <p class="lead"><span style="color: rgb(0, 0, 0); font-family: system, BlinkMacSystemFont, -apple-system, &quot;.SFNSText-Regular&quot;, &quot;San Francisco&quot;, Roboto, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, &quot;Lucida Grande&quot;, sans-serif; text-align: left;">Just stop and enjoy. Take a deep breath. Relax and take in the abundance of life</span>.</p>
+                    <p>
+                      <br/>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item pt128 pb128 o_colored_level oe_img_bg" style="background-position: 0% 100%; background-image: url(&quot;/hostel_management/static/img/gall2.jpg&quot;);" data-name="Slide" data-original-id="578" data-original-src="/hostel_management/static/img/gall2.jpg" data-mimetype="image/jpeg" data-resize-width="1280" data-quality="100">
+              <div class="container">
+                <div class="row content">
+                  <div class="carousel-content o_colored_level col-lg-12" style="">
+                    <h2>
+                      <font style="font-size: 62px; background-color: rgb(255, 255, 255);">Grab your space</font>
+                    </h2>
+                    <h4>
+                      <font style="background-color: rgb(165, 161, 161);">Book your space by registeration</font>
+                    </h4>
+                    <p>
+                      <br/>
+                    </p>
+                    <p>&amp;nbsp;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev o_not_editable o_we_no_overlay" href="#myCarousel1686050935364" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+            <span class="carousel-control-prev-icon"/>
+            <span class="sr-only o_default_snippet_text">Previous</span>
+          </a>
+          <a class="carousel-control-next o_not_editable o_we_no_overlay" href="#myCarousel1686050935364" data-slide="next" role="img" aria-label="Next" title="Next">
+            <span class="carousel-control-next-icon"/>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </section>
+      <section class="s_image_gallery o_colored_level o_slideshow pt80 s_image_gallery_indicators_arrows_boxed s_image_gallery_show_indicators s_image_gallery_indicators_rounded oe_img_bg" data-vcss="001" data-columns="3" style="overflow: hidden; height: 858px; background-image: url(&quot;/hostel_management/static/img/walv3.jpg&quot;);" data-snippet="s_image_gallery" data-name="Image Gallery" data-original-id="597" data-original-src="/hostel_management/static/img/walv3.jpg" data-mimetype="image/jpeg" data-resize-width="1200">
+        <div class="container-fluid">
+          <div id="slideshow_1686304592961" class="carousel slide" data-ride="carousel" data-interval="0" style="margin: 0 12px;">
+            <div class="carousel-inner" style="padding: 0;">
+              <div class="carousel-item active" style="">
+                <img class="img img-fluid d-block" src="/hostel_management/static/img/full08.jpg" style="" alt="" data-name="Image" data-index="0" loading="lazy" data-original-id="592" data-original-src="/web/image/592-6d1e0fbb/full08.jpg" data-mimetype="image/jpeg" data-original-title="" title="" aria-describedby="tooltip631623" data-quality="100"/>
+              </div>
+              <div class="carousel-item undefined" style="">
+                <img class="img img-fluid d-block" src="/hostel_management/static/img/full02.jpg" style="" alt="" data-name="Image" data-index="1" loading="lazy" data-original-id="593" data-original-src="/web/image/593-e499f39b/full02.jpg" data-mimetype="image/jpeg" data-original-title="" title="" aria-describedby="tooltip238244" data-quality="100"/>
+              </div>
+              <div class="carousel-item undefined" style="">
+                <img class="img img-fluid d-block" src="/hostel_management/static/img/hero.jpg" style="" alt="" data-name="Image" data-index="2" loading="lazy" data-original-title="" title="" aria-describedby="tooltip332028" data-original-id="609" data-original-src="/web/image/609-6b83e1d2/hero.jpg" data-mimetype="image/jpeg" data-resize-width="1052" data-quality="100"/>
+              </div>
+              <div class="carousel-item undefined" style="">
+                <img class="img img-fluid d-block" src="/hostel_management/static/img/full07.jpg" style="" alt="" data-name="Image" data-index="3" data-original-id="595" data-original-src="/web/image/595-a78d718d/full07.jpg" data-mimetype="image/jpeg" data-original-title="" title="" aria-describedby="tooltip406967" data-y="731.9470699432892" data-width="1280" data-height="1006.5784499054821" data-scale-x="1" data-scale-y="1" data-aspect-ratio="0/0" loading="lazy" data-quality="100"/>
+              </div>
+              <div class="carousel-item undefined" style="">
+                <img class="img img-fluid d-block" src="/hostel_management/static/img/full04.jpg" style="" alt="" data-name="Image" data-index="4" data-original-id="596" data-original-src="/web/image/596-e48de41b/full04.jpg" data-mimetype="image/jpeg" data-original-title="" title="" aria-describedby="tooltip216620" data-y="940.6427221172023" data-width="1280" data-height="933.9886578449906" data-scale-x="1" data-scale-y="1" data-aspect-ratio="0/0" loading="lazy"/>
+              </div>
+            </div>
+            <ul class="carousel-indicators">
+  <li data-target="#slideshow_1686304592961" data-slide-to="0" style="background-image: url(/hostel_management/static/img/full08.jpg)" class="active"></li>
+  <li data-target="#slideshow_1686304592961" data-slide-to="1" style="background-image: url(/hostel_management/static/img/full02.jpg)"></li>
+  <li data-target="#slideshow_1686304592961" data-slide-to="2" style="background-image: url(/hostel_management/static/img/hero.jpg)"></li>
+  <li data-target="#slideshow_1686304592961" data-slide-to="3" style="background-image: url(/hostel_management/static/img/full07.jpg)"></li>
+  <li data-target="#slideshow_1686304592961" data-slide-to="4" style="background-image: url(/hostel_management/static/img/full04.jpg)"></li>
+</ul>
+
+            <a class="carousel-control-prev o_we_no_overlay" href="#slideshow_1686304592961" data-slide="prev" aria-label="Previous" title="Previous">
+              <span class="fa fa-chevron-left fa-2x text-white" data-original-title="" title="" aria-describedby="tooltip926284"/>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next o_we_no_overlay" href="#slideshow_1686304592961" data-slide="next" aria-label="Next" title="Next">
+              <span class="fa fa-chevron-right text-white fa-2x" data-original-title="" title="" aria-describedby="tooltip823018"/>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="s_title pt32 o_colored_level pb8" data-vcss="001" data-snippet="s_title" data-name="Title">
+        <div class="s_allow_columns container">
+          <h2 class="reviews_header aos-init aos-animate" data-aos="fade-down" style="text-align: center; margin-right: 0px; margin-bottom: 30px; margin-left: 0px; padding: 0px; outline: 0px; font-family: Mulish, sans-serif; color: rgb(4, 11, 17); font-weight: 800; font-size: 40px; line-height: 1; pointer-events: auto; transition-duration: 0.65s; transition-timing-function: ease; transform: none; opacity: 1; transition-property: opacity, transform, -webkit-transform;">
+            <font style="font-size: 48px;">What our guests say</font>
+          </h2>
+        </div>
+      </section>
+      <section class="s_quotes_carousel_wrapper o_colored_level oe_img_bg" data-vxml="001" data-vcss="001" data-snippet="s_quotes_carousel" data-name="Quotes" style="background-position: 11.8895% 38.6677%; background-image: url(&quot;/web/image/607-5dfec59e/towfiqu-barbhuiya-5xTYgw2g7aw-unsplash.jpg&quot;);" data-original-id="561" data-original-src="/web/image/561-47aed148/towfiqu-barbhuiya-5xTYgw2g7aw-unsplash.jpg" data-mimetype="image/jpeg" data-resize-width="1920" data-quality="100">
+        <div id="myCarousel1686227550876" class="s_quotes_carousel s_carousel_default carousel bg-200 carousel-fade slide" data-interval="10000" style="">
+          <ol class="carousel-indicators o_we_no_overlay">
+            <li data-target="#myCarousel1686227550876" data-slide-to="0" class="active"/>
+            <li data-target="#myCarousel1686227550876" data-slide-to="1"/>
+            <li data-target="#myCarousel1686227550876" data-slide-to="2"/>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item o_colored_level parallax pb120 pt168 active" data-name="Slide" style="" data-scroll-background-ratio="3">
+              <span class="s_parallax_bg oe_img_bg" style="top: -294px; bottom: -294px; background-image: url(&quot;hostel_management/static/img/bg1.jpg&quot;); transform: translateY(-285px);" data-original-id="561" data-original-src="/web/image/561-47aed148/towfiqu-barbhuiya-5xTYgw2g7aw-unsplash.jpg" data-mimetype="image/jpeg" data-resize-width="1920" data-quality="100"/>
+              <div class="container">
+                <blockquote class="blockquote s_blockquote s_blockquote_classic w-50 mx-auto" data-name="Blockquote">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;It is an amazing hostel which i ever had.gives an excellentstay,atmosphere and all&amp;nbsp;<i class="bg-o-color-2 fa fa-1x fa-quote-left float-left rounded s_blockquote_icon" data-original-title="" title="" aria-describedby="tooltip224360"/>
+                            <div class="o_cc1 s_blockquote_content"><footer class="blockquote-footer"><img src="/web/image/website.s_quotes_carousel_demo_image_3" class="img mr-2 rounded-circle s_blockquote_avatar" alt="" loading="lazy" data-original-id="262" data-original-src="/website/static/src/img/snippets_demo/s_team_member_3.png" data-mimetype="image/png" data-original-title="" title="" aria-describedby="tooltip936783" style=""/><span class="s_blockquote_author"><b>Jane DOE</b> • first semester MCA</span></footer></div></blockquote>
+              </div>
+            </div>
+            <div class="carousel-item o_colored_level parallax s_parallax_is_fixed s_parallax_no_overflow_hidden undefined pb80 pt72" style="background-position: 50% 50%;" data-name="Slide" data-scroll-background-ratio="1">
+              <span class="s_parallax_bg oe_img_bg" style="background-image: url(&quot;/hostel_management/static/img/cr1.jpg&quot;); background-position: 100% 0%;" data-original-id="260" data-original-src="/hostel_management/static/img/cr2.jpg" data-mimetype="image/jpeg" data-quality="100" data-resize-width="2250"/>
+              <div class="container">
+                <blockquote class="s_blockquote blockquote w-50 mr-auto s_blockquote_cover" data-name="Blockquote">
+                  <i class="fa fa-1x fa-quote-left rounded float-left bg-o-color-2 s_blockquote_icon"/>
+                  <div class="s_blockquote_content undefined parallax" style="background-position: 50% 50%;" data-scroll-background-ratio="3">
+                    <span class="s_parallax_bg oe_img_bg" style="top: -294px; bottom: -294px; background-image: url(&quot;/web/image/608-2fd4008b/s_blockquote_cover_default_image.jpg&quot;); transform: translateY(-294px);" data-original-id="289" data-original-src="/website/static/src/img/snippets_demo/s_blockquote_cover.jpg" data-mimetype="image/jpeg" data-quality="100"/>
+                    <div class="o_we_bg_filter bg-white-50"/>
+                    <p>
+                      <span style="color: rgb(51, 51, 51); font-family: &quot;Trip Sans VF&quot;, &quot;Trip Sans&quot;, Arial, sans-serif; font-size: 18px; font-style: normal;">This hostel is absolutely superb, the staff are friendly, helpful, full of local knowledge and go the extra mile. The facilities are cleaned daily, rooms are spacious, </span>
+                      <br/>
+                    </p>
+                    <footer class="blockquote-footer">
+                      <img src="/web/image/website.s_quotes_carousel_demo_image_4" class="s_blockquote_avatar img rounded-circle mr-2 d-none" alt="" loading="lazy" data-original-id="263" data-original-src="/website/static/src/img/snippets_demo/s_team_member_2.png" data-mimetype="image/png" style=""/>
+                      <span class="s_blockquote_author"><b>John DOE</b> • Second year MCA</span>
+                    </footer>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+            <div class="carousel-item pt80 pb80 o_colored_level parallax" style="background-position: 50% 50%;" data-name="Slide" data-scroll-background-ratio="3">
+              <span class="s_parallax_bg oe_img_bg" style="top: -294px; bottom: -294px; background-image: url(&quot;/hostel_management/static/img/cr2.jpg&quot;); transform: translateY(-287px);" data-original-id="261" data-original-src="/hostel_management/static/img/cr2.jpg" data-mimetype="image/jpeg" data-quality="100"/>
+              <div class="container">
+                <blockquote class="s_blockquote s_blockquote_classic blockquote w-50 ml-auto" data-name="Blockquote">
+                  <i class="bg-o-color-2 fa fa-1x fa-quote-left float-left rounded s_blockquote_icon" style="font-size: 18px;"/>
+                  <div class="s_blockquote_content" style="">
+                    <p>
+                      <span style="color: rgb(252, 252, 252); font-family: &quot;Trip Sans VF&quot;, &quot;Trip Sans&quot;, Arial, sans-serif; font-size: 18px; font-style: normal;">free wireless internet in the lounge with some computers also connected to the internet, with a large screen TV&amp;nbsp;</span>
+                      <br/>
+                    </p>
+                    <footer class="blockquote-footer">
+                      <img src="/web/image/website.s_quotes_carousel_demo_image_5" class="s_blockquote_avatar img rounded-circle mr-2" alt="" loading="lazy" data-original-id="264" data-original-src="/website/static/src/img/snippets_demo/s_team_member_4.png" data-mimetype="image/png" style=""/>
+                      <span class="o_default_snippet_text s_blockquote_author">
+                        <b class="o_default_snippet_text">
+                          <font style="color: rgb(252, 252, 252);">Iris DOE</font>
+                        </b>
+                        <font style="color: rgb(252, 252, 252);">&amp;nbsp;• CEO of MyCompany</font>
+                      </span>
+                    </footer>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-control-prev o_not_editable o_we_no_overlay" data-target="#myCarousel1686227550876" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+            <span class="carousel-control-prev-icon"/>
+            <span class="sr-only o_default_snippet_text">Previous</span>
+          </div>
+          <div class="carousel-control-next o_not_editable o_we_no_overlay" data-target="#myCarousel1686227550876" data-slide="next" role="img" aria-label="Next" title="Next">
+            <span class="carousel-control-next-icon"/>
+            <span class="sr-only o_default_snippet_text">Next</span>
+          </div>
+        </div>
+      </section>
+      <section class="s_title pt32 pb32 o_colored_level" data-vcss="001" data-snippet="s_title" data-name="Title">
+        <div class="container s_allow_columns">
+          <h2 class="latest_header-title aos-init aos-animate" data-aos="fade-right" style="text-align: center; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; outline: 0px; font-family: Mulish, sans-serif; color: rgb(4, 11, 17); font-size: 40px; line-height: 1; pointer-events: auto; transition-duration: 0.65s; transition-timing-function: ease; transform: none; opacity: 1; transition-property: opacity, transform, -webkit-transform;">
+            <b>
+              <font style="font-size: 48px;">Hosteller news</font>
+            </b>
+          </h2>
+        </div>
+      </section>
+      <section class="s_three_columns bg-200 o_colored_level pt0 pb0" data-vcss="001" data-snippet="s_three_columns" data-name="Columns" style="">
+        <div class="container-fluid">
+          <div class="row d-flex align-items-stretch">
+            <div class="s_col_no_bgcolor pt16 pb16 col-lg-4">
+              <div class="card bg-white h-100 border rounded shadow" style="border-width: 2px !important; border-radius: 40px !important; box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 5px !important;">
+                <img class="card-img-top" src="hostel_management/static/img/02.jpg" alt="" loading="lazy" data-original-title="" title="" aria-describedby="tooltip895136" data-original-id="581" data-original-src="/web/image/581-8abaf5b1/02.jpg" data-mimetype="image/jpeg" data-resize-width="800" data-quality="100" style=""/>
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <a class="h4 main_title" data-shave="true" style="margin: 0px 0px 15px; padding: 0px; outline: 0px; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(35, 87, 132); font-family: Mulish, sans-serif; font-size: 22px; border: none; cursor: pointer; transition: all 0.3s ease-in-out 0s; font-weight: 800; display: inline-block;">How to cure wanderlust without leaving your home</a>
+                    <br/>
+                  </h3>
+                  <p class="western">
+                    <font style="font-size: 18px;">Take a virtual tour of famous attractions and galleries,Go wildlife watching,Learn to cook international dishes,Watch a travel documentary or movie,Connect with likeminded travellers</font>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="s_col_no_bgcolor pt16 pb16 col-lg-4">
+              <div class="card bg-white h-100 rounded border shadow" style="border-radius: 40px !important; border-width: 2px !important; box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 5px !important;">
+                <img class="card-img-top" src="hostel_management/static/img/01.jpg" alt="" loading="lazy" data-original-title="" title="" aria-describedby="tooltip94190" data-original-id="580" data-original-src="/web/image/580-a713a0e4/01.jpg" data-mimetype="image/jpeg" data-quality="100" data-width="800" data-height="667" data-scale-x="1" data-scale-y="1" data-aspect-ratio="0/0" style=""/>
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <a class="main_title h4" data-shave="true" style="margin: 0px 0px 15px; padding: 0px; outline: 0px; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(4, 11, 17); font-family: Mulish, sans-serif; font-size: 22px; border: none; cursor: pointer; transition: all 0.3s ease-in-out 0s; font-weight: 800; display: inline-block;" data-original-title="" title="">
+                      <font style="color: rgb(61, 97, 122);" data-original-title="" title="" aria-describedby="tooltip750578">What happens when you travel with strangers?</font>
+                    </a>
+                    <br/>
+                  </h3>
+                  <p class="card-text">
+                    <font style="font-size: 18px;">You meet someone who you would never otherwise meet, and they can introduce you to their culture and travel experiences. You may change your plans in order to carry on travelling together, and we all know that sometimes the best experiences are the unplanned ones</font>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="s_col_no_bgcolor pt16 col-lg-4 pb16">
+              <div class="card bg-white h-100 rounded border shadow" style="border-radius: 40px !important; border-width: 2px !important; box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 5px !important;">
+                <img class="card-img-top" src="hostel_management/static/img/05.jpg" alt="" loading="lazy" data-original-title="" title="" aria-describedby="tooltip895136" data-original-id="582" data-original-src="/web/image/582-027067ba/05.jpg" data-mimetype="image/jpeg" data-resize-width="800" data-quality="100" style=""/>
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <a class="main_title h4" data-shave="true" style="margin: 0px 0px 15px; padding: 0px; outline: 0px; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(35, 87, 132); font-family: Mulish, sans-serif; font-size: 22px; border: none; cursor: pointer; transition: all 0.3s ease-in-out 0s; font-weight: 800; display: inline-block;" data-original-title="" title="">Yoga Hostels to soothe your mind and nomadic soul</a>
+                    <br/>
+                  </h3>
+                  <h5 class="card-text">Begin your journey to enlightenment on the golden bays of Cascais. The Salty Pelican is run by three backpackers who have poured their heart and soul into creating an easy-going, beachy retreat where you can leave your cares at the door.</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s_numbers o_cc o_cc2 o_colored_level pb0 pt0" data-snippet="s_numbers" data-name="Numbers" style="">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 text-center o_colored_level pt0 pb0">
+              <span style="font-size: 62px;">14</span>
+              <br/>
+              <h6>Rooms</h6>
+            </div>
+            <div class="col-lg-3 text-center o_colored_level pt16 pb0">
+              <span class="s_number display-4">
+                <b>
+                  <font style="font-size: 62px;">11</font>
+                </b>
+              </span>
+              <h6>Students</h6>
+            </div>
+            <div class="col-lg-3 text-center o_colored_level pt0 pb0" style="">
+              <span style="font-size: 62px;">4</span>
+              <br/>
+              <h6>Staff</h6>
+            </div>
+            <div class="col-lg-3 text-center o_colored_level pt0 pb16">
+              <span style="font-size: 62px;">5</span>
+              <br/>
+              <h6>Hall</h6>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s_features_grid pt48 pb24 o_colored_level" data-snippet="s_features_grid" data-name="Features Grid">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 s_col_no_bgcolor pb24">
+              <div class="row">
+                <div class="col-lg-12 pt16 pb16 o_colored_level shadow" data-name="Box" style="">
+                  <i class="fa fa-2x rounded-circle bg-primary s_features_grid_icon fa-glass" data-original-title="" title="" aria-describedby="tooltip839145"/>
+                  <div class="s_features_grid_content">
+                    <h4>Don't use liquor</h4>
+                    <p>liquor is strictly prohibited in surroundings and hostel<br/></p>
+                  </div>
+                </div>
+                <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box">
+                  <i class="fa fa-2x rounded-circle bg-primary s_features_grid_icon fa-soundcloud" data-original-title="" title="" aria-describedby="tooltip924916"/>
+                  <div class="s_features_grid_content">
+                    <h4>No smoking</h4>
+                    <p>smoking is strictly prohibited in surroundings and hostel</p>
+                  </div>
+                </div>
+                <div class="col-lg-12 pt16 pb16 o_colored_level shadow" data-name="Box">
+                  <i class="fa fa-2x fa-trash rounded-circle bg-primary s_features_grid_icon"/>
+                  <div class="s_features_grid_content">
+                    <h4>Use waste bins</h4>
+                    <p>use the waste bin which fixed everywhere</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 s_col_no_bgcolor pb24">
+              <div class="row">
+                <div class="col-lg-12 pt16 pb16 o_colored_level shadow" data-name="Box" style="">
+                  <i class="fa fa-2x rounded bg-secondary s_features_grid_icon fa-plug" data-original-title="" title="" aria-describedby="tooltip202266"/>
+                  <div class="s_features_grid_content">
+                    <h4>don't use high power instruments</h4>
+                    <p>cannot use high power instruments that make harmful</p>
+                  </div>
+                </div>
+                <div class="col-lg-12 pt16 pb16 o_colored_level" data-name="Box">
+                  <i class="fa fa-2x rounded bg-secondary s_features_grid_icon fa-bitbucket-square" data-original-title="" title="" aria-describedby="tooltip585380"/>
+                  <div class="s_features_grid_content">
+                    <h4>Use laundry serivice</h4>
+                    <p>use laundry service proper and neat&amp;nbsp;</p>
+                  </div>
+                </div>
+                <div class="col-lg-12 pt16 pb16 o_colored_level shadow" data-name="Box">
+                  <i class="fa fa-2x rounded bg-secondary s_features_grid_icon fa-sort-amount-desc"/>
+                  <div class="s_features_grid_content">
+                    <h4>Follow the instructions</h4>
+                    <p>please follow the instructions carefully</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s_showcase pt48 o_colored_level pb24" data-vcss="002" data-snippet="s_showcase" data-name="Showcase" style="">
+        <div class="container-fluid">
+          <div class="row no-gutters s_col_no_resize s_col_no_bgcolor s_nb_column_fixed">
+            <div class="col-lg text-lg-right">
+              <div class="row">
+                <div class="col-lg-12 pt24 pb24 o_colored_level d-none d-lg-block" data-name="Block" style="">
+                  <div class="s_showcase_title d-flex flex-lg-row-reverse mb-2">
+                    <span class="fa s_showcase_icon mr-3 mr-lg-0 ml-lg-3 padding-small fa-camera fa-2x" data-original-title="" title="" aria-describedby="tooltip187954"/>
+                    <h3>CCTV</h3>
+                  </div>
+                  <p>Full hostel under cctv surveillance</p>
+                </div>
+                <div class="col-lg-12 pt24 pb24 o_colored_level shadow" data-name="Block" style="">
+                  <div class="s_showcase_title d-flex flex-lg-row-reverse mb-2">
+                    <i class="fa fa-2x fa-user-secret ml-lg-3 mr-3 mr-lg-0 s_showcase_icon" data-original-title="" title="" aria-describedby="tooltip769309" style="color: rgb(13, 22, 32);"/>
+                    <h3>Security</h3>
+                  </div>
+                  <p>Full time security guard</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-1">
+              <div class="w-50 h-100 border-right"/>
+            </div>
+            <div class="col-lg">
+              <div class="row">
+                <div class="col-lg-12 pt24 pb24 o_colored_level shadow" data-name="Block" style="">
+                  <div class="s_showcase_title d-flex mb-2">
+                    <h3><span class="fa fa-automobile"/>&amp;nbsp; &amp;nbsp;Car parking</h3>
+                  </div>
+                  <p>Wide car parking area</p>
+                </div>
+                <div class="col-lg-12 pt24 pb24 o_colored_level" data-name="Block" style="">
+                  <div class="s_showcase_title d-flex mb-2">
+                    <i class="fa fa-2x fa-wifi mr-3 s_showcase_icon" data-original-title="" title="" aria-describedby="tooltip120952" style="color: rgb(7, 7, 7);"/>
+                    <h3>Wi-Fi</h3>
+                  </div>
+                  <p>High speed wifi connection</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container text-lg-center">
+          <p>
+            <br/>
+          </p>
+          <br/>
+        </div>
+      </section>
+      <section class="s_parallax bg-black-50 o_colored_level pt0 s_parallax_no_overflow_hidden parallax s_parallax_is_fixed o_half_screen_height" data-scroll-background-ratio="1" data-snippet="s_parallax" data-name="Parallax" style="background-position: 100% 81.9175%;">
+        <span class="s_parallax_bg oe_img_bg" data-original-id="611" data-original-src="/hostel_management/static/img/logo22.png" data-mimetype="image/jpeg" data-resize-width="1920" data-quality="100" style="background-image: url(&quot;hostel_management/static/img/logo22.png&quot;); background-position: 0% 60.1079%;"/>
+        <div class="oe_structure oe_empty" data-editor-message="DRAG BUILDING BLOCKS HERE"/>
+      </section>
+      <section class="s_references o_colored_level pb0 pt0" data-snippet="s_references" data-name="References">
+        <div class="container">
+          <h2 style="text-align: center;">Services</h2>
+          <p style="text-align: center;">We are in good ...</p>
+          <div class="row">
+            <div class="pt16 pb16 o_colored_level col-lg-2">
+              <img src="hostel_management/static/img/Booking-logo-4.png" class="img img-fluid mx-auto" alt="" loading="lazy" data-original-id="426" data-original-src="/web/image/426-b50b2d7d/Booking-logo-4.png" data-mimetype="image/png" data-resize-width="690" style="transform: translateX(-3.7%) translateY(21.9%); animation-play-state: paused; transition: none 0s ease 0s;" data-original-title="" title="" aria-describedby="tooltip950029"/>
+            </div>
+            <div class="pt16 pb16 o_colored_level col-lg-2 shadow" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px inset !important;">
+              <img src="hostel_management/static/img/cleartrip-logo-vector.svg" class="img img-fluid mx-auto" alt="" loading="lazy" style="transform: translateY(-34.4%) scaleX(0.9) scaleY(0.78);" data-original-title="" title="" aria-describedby="tooltip228581" data-original-id="616" data-original-src="/web/image/616-786df75d/cleartrip-logo-vector.svg" data-mimetype="image/svg+xml" data-resize-width="451"/>
+            </div>
+            <div class="pt16 pb16 o_colored_level col-lg-2">
+              <img src="hostel_management/static/img/booking-holdings4843.jpg" class="img img-fluid mx-auto" alt="" loading="lazy" style="transform: translateX(0.6%) translateY(2%) scaleX(1.1);" data-original-id="424" data-original-src="/web/image/424-7d729949/booking-holdings4843.jpg" data-mimetype="image/jpeg" data-original-title="" title="" aria-describedby="tooltip192212" data-x="-7.697546304067751e-14" data-y="187.12113698323566" data-width="866" data-height="275.7577260335286" data-scale-x="1" data-scale-y="1" data-aspect-ratio="0/0"/>
+            </div>
+            <div class="pt16 pb16 o_colored_level col-lg-2 shadow" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px inset !important;">
+              <img src="hostel_management/static/img/Momondo-Logo.wine.png" class="img img-fluid mx-auto" alt="" loading="lazy" style="transform: translateY(-29.1%) scaleX(1.28) scaleY(0.95);" data-original-title="" title="" aria-describedby="tooltip703125" data-original-id="617" data-original-src="/web/image/617-53eeef7c/Momondo-Logo.wine.png" data-mimetype="image/png" data-resize-width="690"/>
+            </div>
+            <div class="pt16 pb16 o_colored_level col-lg-2" style="">
+              <img src="hostel_management/static/img/Hotwire.png" class="img img-fluid mx-auto" alt="" loading="lazy" style="transform: translateX(-0.6%) translateY(-28.1%) scaleX(1.1) scaleY(0.65);" data-original-title="" title="" aria-describedby="tooltip770339" data-original-id="618" data-original-src="/web/image/618-509248f5/Hotwire.png" data-mimetype="image/png" data-resize-width="690"/>
+            </div>
+            <div class="pt16 pb16 o_colored_level col-lg-2 shadow" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px inset !important;">
+              <img src="hostel_management/static/img/trip.png" class="img img-fluid mx-auto" alt="" loading="lazy" style="transform: translateX(4.4%) translateY(-17.5%) scaleX(0.82) scaleY(0.49);" data-original-title="" title="" aria-describedby="tooltip770339" data-original-id="619" data-original-src="/web/image/619-bc7a74c3/pngegg.png" data-mimetype="image/png" data-resize-width="690"/>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </t>
+</t>
+</template>
+
+</odoo>

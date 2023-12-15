@@ -1,0 +1,119 @@
+<odoo>
+    <data>
+
+        <template id="custom_layout">
+
+
+            <div class="header">
+                <div class="text-center" style="border-bottom: 1px solid black;">
+                    <div style="border-top: 1px solid #000; margin-top: 20px; margin-bottom: 20px;">
+                        <img src="/hostel_management/static/img/hostel.jpg"
+                            style="width: 100px; height: 80px;" />
+                        <h1 style="text-align:center;">BLISS HOSTEL</h1>
+                        <p style="text-align:center;">Address: Marconia Main Street Ernakulam</p>
+                        <p style="text-align:center;">Phone: 123-456-7890</p>
+                        <div class="row">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="article o_report_layout_standard">
+                <t t-out="0" />
+            </div>
+
+            <div class="footer o_standard_footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <br /> Page<p>
+                        <span class="page" />
+                    </p>
+                </div>
+
+            </div>
+        </template>
+
+        <template id="staff_report_qweb_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div style="width:100%; text-align:center; font-size:30px">
+                            <h10>
+                                <strong>Hostel Staff Report</strong>
+                            </h10>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="page">
+
+                            <div class="column mt32 mb32">
+                                <div class="col-auto col-3 mw-100 mb-2">
+                                    <strong>Name of Employee:</strong>
+                                    <p class="m-0" t-field="o.name" />
+                                </div>
+                                <div class="col-auto col-3 mw-100 mb-2">
+                                    <strong>Email :</strong>
+                                    <p class="m-0" t-field="o.email" />
+                                </div>
+                                <div class="col-auto col-3 mw-100 mb-2">
+                                    <strong>City :</strong>
+                                    <p class="m-0" t-field="o.city" />
+                                </div>
+                                <div class="col-auto col-3 mw-100 mb-2">
+                                    <strong>State :</strong>
+                                    <p class="m-0" t-field="o.state" />
+                                </div>
+                            </div>
+                            <br></br>
+                            <table class="table table-sm o_main_table">
+                             <thead style="display: table-row-group">
+                                <tr>
+                                    <th>Contact</th>
+                                    <th> Date of Birth </th>
+                                    <th> Gender</th>
+                                    <th> Marital Status</th>
+                                    <th>Monthly Salary</th>
+                                </tr>
+                                </thead>
+
+                                <tr>
+                                    <td>
+                                        <span t-field="o.contact" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.DOB" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.gender" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.marital_status" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.monthly_salary" />
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+        <report
+            id="staff_report_id"
+            model="hostel.staff"
+            string="Print Staff Report"
+            name="hostel_management.staff_report_qweb_template"
+            file="hostel_management.staff_report_qweb_template"
+        />
+    </data>
+
+</odoo>

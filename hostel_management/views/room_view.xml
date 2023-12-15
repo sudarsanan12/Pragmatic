@@ -1,0 +1,96 @@
+<odoo>
+<data>
+<record id="room_tree_view" model="ir.ui.view">
+        <field name="name">hostel.tree</field>
+        <field name="model">hostel.room</field> 
+        <field name="arch" type="xml">
+            <tree string="Hostel">
+                <field name="id"/>
+                <field name="room_no"/>
+                <field name="room_type"/>
+                <field name="room_ac"/>
+                <field name="bath_attached"/>
+                <field name="room_rate"/>
+                <field name ="mess_rate"/> 
+                <field name="count"/>
+                <field name="availability"/>
+            </tree>
+        </field>
+    </record>
+
+<!-- ================== -->
+
+ <record id="room_form_view" model="ir.ui.view">
+        <field name="name">hostel.form</field>
+        <field name="model">hostel.room</field> 
+        <field name="arch" type="xml">
+            <form string="Hostel">
+               <sheet>
+               <div class="oe_title">
+               					<h1>
+                      				<field name="sequence_number" readonly="1"/>
+                				</h1>
+            				</div>
+               <group>
+               <group>
+               <field name="room_no"/>
+                <field name="room_type"/> 
+                <field name="count"/>
+                <field name="room_rate"/>
+                <field name ="mess_rate"/>
+                </group>
+               <group>
+                <field name="room_ac"/>
+                <field name="bath_attached"/>
+                <field name="availability"/>
+                </group>
+                </group>
+                </sheet> 
+            </form>
+        </field>
+    </record> 
+
+<!-- ================== -->
+
+ <record id="room_search_view" model="ir.ui.view">
+        <field name="name">hostel.search</field>
+        <field name="model">hostel.room</field>
+        <field name="arch" type="xml">
+            <search string="Hostel">
+                <field name="room_no"/>
+                <field name="room_type"/>
+                <filter string="filter by 2 share" domain="[('room_type', '=', '2share')]" name="my_room1_filter"/>
+                <filter string="filter by 3 share" domain="[('room_type', '=', '3share')]" name="my_room2_filter"/>
+                <filter string="filter by 4 share" domain="[('room_type', '=', '4share')]" name="my_room3_filter"/>
+                <filter string="filter by AC" domain="[('room_ac', '=', 'True')]" name="my_ac_filter"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                <filter string="AC" name="group_by_AC" domain="[]" context="{'group_by': 'room_ac'}"/>
+                <filter string="Bathroom" name="group_by_bathroom" domain="[]" context="{'group_by': 'bath_attached'}"/>
+                </group>
+            </search>
+        </field>
+    </record> 
+
+
+<!-- ######################################################################################################## -->
+
+
+
+
+        <record id="room_view_action" model="ir.actions.act_window">
+           <field name="name">Rooms</field>
+           <field name="res_model">hostel.room</field>
+           <field name="view_mode">tree,form</field>
+           <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                Create room
+                 </p>
+                </field>
+              </record>
+              
+
+<!-- ######################################################################################################## -->
+
+</data>
+</odoo> 

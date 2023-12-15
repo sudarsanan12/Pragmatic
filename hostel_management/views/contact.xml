@@ -1,0 +1,27 @@
+<odoo>
+<data>
+
+ <record id="contact_main_action" model="ir.actions.act_window">
+			<field name="name">Contact</field>
+			<field name="res_model">hostel.contact</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+<record id="contact_tree_view" model="ir.ui.view">
+        <field name="name">hostel.contact.tree</field>
+        <field name="model">hostel.contact</field> 
+        <field name="arch" type="xml">
+            <tree string="Hostel">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name ="subject"/>
+                <field name="question"/>
+            </tree>
+        </field>
+    </record>
+
+
+              
+        </data>
+    </odoo>

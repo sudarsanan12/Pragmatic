@@ -1,0 +1,100 @@
+<odoo>
+    <data>
+
+        <!-- Tree View Definition -->
+        <record model="ir.ui.view" id="hostel_tree_view">
+            <field name="name">hostel.tree.view</field>
+            <field name="model">hostel.maintenance</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="assigned_person"></field>
+                    <field name="profession" />
+                    <field name="status" />
+                    <field name="sequence"></field>
+                    <field name="room_no"></field>
+                    <field name="complaint_description"></field>
+                    <field name="complaint_time"></field>
+                    <field name="helpdesk_id"></field>
+                    <field name="price"></field>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Form View Definition -->
+        <record model="ir.ui.view" id="hostel_form_view">
+            <field name="name">hostel.form.view</field>
+            <field name="model">hostel.maintenance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="assigned" string="Assigned"
+                            attrs="{'invisible': [('status', 'not in', ['pending'])]}" type="object"
+                            class="btn-primary" />
+                        <button name="done" string="Done"
+                            attrs="{'invisible': [('status', 'not in', ['assigned'])]}"
+                            type="object" class="btn-primary" />
+                        <field name="status" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="sequence" readonly="1" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="assigned_person" />
+                                <field name="profession" />
+                                <field name="helpdesk_id" />
+                            </group>
+                            <group>
+                                <field name="room_no"/>
+                                <field name="complaint_description" />
+                                <field name="complaint_time" />
+                            </group>
+                            <group>
+                                <field name="price" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_maintenance">
+            <field name="name">Hostel Maintenance</field>
+            <field name="res_model">hostel.maintenance</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a new record.
+                </p>
+            </field>
+        </record>
+
+        <record id="maintainenance_search" model="ir.ui.view">
+          <field name="name">hostel.maintainenance.search</field>
+          <field name="model">hostel.maintenance</field>
+          <field name="arch" type="xml">
+            <search string="Maintainenance">
+            
+                <field name="assigned_person"/>
+                <field name="profession"/>
+                <field name="status"/>
+                <field name="helpdesk_id"/>
+                <field name="room_no"/>
+                <field name="complaint_description"/>
+                <field name="complaint_time"/>
+               <filter string="filter by Profession" domain="[('profession' , '=', 'plumber')]" name="profession_filter"/>  
+              <group expand="0" string="Group By">
+                <filter string="Status" name="group_by_status" domain="[]" context="{'group_by': 'status'}"/>
+            
+                </group> 
+            </search>
+        </field>
+    </record> 
+
+
+</data>
+</odoo>

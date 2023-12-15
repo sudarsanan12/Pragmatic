@@ -1,0 +1,101 @@
+<odoo>
+    <data>
+
+    <template id="custom_layout">
+
+        <div class="header">
+        <div style="border-top: 1px solid #000; margin-top: 20px; margin-bottom: 20px;">
+                    <img src="/hostel_management/static/img/hostel.jpg" style="width: 100px; height: 80px;" />
+                    <h1 style="text-align:center;">BLISS HOSTEL</h1>
+                    <p style="text-align:center;">Address: Marconia Main Street  Ernakulam</p>
+                    <p style="text-align:center;">Phone: 123-456-7890</p>
+
+        <div class="text-center" style="border-bottom: 1px solid black;">
+            <div class="row">
+
+            </div>
+        </div>
+        </div>
+        </div>
+
+        
+        <div class="article o_report_layout_standard">
+            <t t-out="0"/>
+        </div>
+        <div class="footer o_standard_footer">
+        <div class="text-center" style="border-top: 1px solid black;">
+        <br/>
+
+            Page<p><span class="page"/></p>
+            
+        </div>
+
+        </div>
+    
+        </template>
+
+        <template id="bills_report_qweb_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div style="width:100%; text-align:center; font-size:30px">
+                            <h10>
+                                <strong>Hostel Bill Report</strong>
+                            </h10>
+                        </div>
+                        <br />
+                        <br />
+                    
+                        <div class="page">
+
+                            <!-- <ul> -->
+                                <div width="150%">Bills ID: <span t-field="o.sequence" /></div>
+                                <div>Student ID: <span t-field="o.student_id" /></div>
+                                <div>Name: <span t-field="o.name" /></div>
+                                <div>email: <span t-field="o.email" /></div>
+                                <div>Date: <span t-field="o.date" /></div>
+                                <div>Permanent Address: <span t-field="o.address" /></div>
+                                <div> Contact Number: <span t-field="o.contact_no" /></div>
+                                <div> Room type: <span t-field="o.room_type" /></div>
+                                <!-- <li> room_ac: <span t-field="o.room_ac"/></li>
+                                <li> bath_attached: <span t-field="o.bath_attached"/></li> -->
+                                <br/><br />
+
+                                <div class="row mt32 mb32" id="students_id">
+                                    
+                                    
+                                    <div  class="col-auto col-3 mw-100 mb-2">
+                                        <strong>Room No</strong><hr style="color:solid #000"/>
+                                        <h7 class="m-0" t-field="o.room_id"/>
+                                    </div>
+                                    <div  class="col-auto col-3 mw-100 mb-2">
+                                        <strong>Room Rent </strong><hr style="color:solid #000"/>
+                                        <h7 class="m-0" t-field="o.room_price"/>
+                                    </div>
+                                    <div  class="col-auto col-3 mw-100 mb-2">
+                                        <strong>Mess Fee</strong><hr style="color:solid #000"/>
+                                        <h7 class="m-0" t-field="o.mess_price"/>
+                                    </div>
+                                    <div  class="col-auto col-3 mw-100 mb-2">
+                                        <strong>Total</strong><hr style="color:solid #000"/>
+                                        <h7 class="m-0" t-field="o.total_price"/>
+                                    </div>
+                        
+                                </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+    <report
+        id="bills_report_id"
+        model="hostel.management"
+        string="Print Bills Report"
+        name="hostel_management.bills_report_qweb_template"
+        file="hostel_management.bills_report_qweb_template"
+    />
+
+</odoo>

@@ -1,0 +1,95 @@
+<odoo>
+	<data>
+        <record id="visitors_form" model="ir.ui.view">
+			<field name="name">hostel.visitors.form</field>
+			<field name="model">hostel.visitors</field>
+			<field name="arch" type="xml">
+				<form string="Visitors">
+					<header>
+						<button name ="approve" groups="hostel_management.admin_group" string = "Approve" type ="object" attrs="{'invisible': [('state','=', 'approved')]}" class="btn-primary" />
+						<button name ="reject" groups="hostel_management.admin_group" string = "Reject" type ="object" attrs="{'invisible': [('state','=', 'rejected')]}" class="btn-primary"/>
+						<field name="state" widget="statusbar" />
+					</header>
+						<sheet>
+							<widget name="web_ribbon" title="Rejected" bg_color="bg-danger" attrs="{'invisible': [('state','!=', 'rejected')]}"/>
+							<widget name="web_ribbon" title="Approved" bg_color="bg-success" attrs="{'invisible': [('state','!=', 'approved')]}"/>
+
+							<div class="oe_title">
+               					<h1>
+                      				<field name="seq" readonly="1"/>
+                				</h1>
+            				</div>
+
+							<group>
+								<group>
+									<field name="name" />
+									<field name="contact" />
+                                	<field name="time_from" />
+								</group>
+								<group>
+									<field name="address" />
+                                	<field name="student_id" domain="[('states', '=', 'confirmed' )]"/>
+                                	<field name="time_to" />
+                                	<field name="time" />
+								</group>
+                            	<group>
+                            		<field name="relation" />
+                            	</group>
+								<group>
+									<field name="reason" />
+                            	</group>
+							</group>
+						</sheet>
+					</form>
+			</field>
+		</record>
+
+
+        <record id="student_tree" model="ir.ui.view">
+			<field name="name">hostel.visitors.tree</field>
+			<field name="model">hostel.visitors</field>
+			<field name="arch" type="xml">
+				<tree string="Visitors">
+					<field name="name" />
+                    <field name="contact" />
+					<field name="student_id" />
+					<field name="relation" />
+                    <field name="time" />
+					<field name="reason" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+
+  		<record id="visitors_search" model="ir.ui.view">
+			<field name="name">hostel.visitors.search</field>
+			<field name="model">hostel.visitors</field>
+			<field name="arch" type="xml">
+            	<search string="Student">	
+            		<field name="name" />
+                    <field name="address" />
+                    <field name="contact" />
+					<field name="relation" />
+					<field name="time_to" />
+					<field name="time_from" />
+					<filter string="filter by States" domain="[('state' , '=', 'approved')]" name="visitor_filter"/> 
+					<group expand="0" string="Group by" >
+						<filter string="Status" name="group_by_status" domain="[]" context="{'group_by' : 'state'}" />
+					</group>   
+            	</search>
+        	</field>
+    	</record>
+
+		<record id="visitors_action" model="ir.actions.act_window">
+			<field name="name">Visitors</field>
+			<field name="res_model">hostel.visitors</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'search_default_filter_by_states': 1
+									 }</field>
+			<field name="search_view_id" ref= "visitors_search" />
+		</record>
+
+		
+	</data>
+</odoo>

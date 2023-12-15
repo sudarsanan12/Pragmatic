@@ -1,0 +1,79 @@
+<odoo>
+    <data>
+
+        <record id="seq_visitors_order" model="ir.sequence">
+            <field name="name">Visitors</field>
+            <field name="code">hostel.visitors</field>
+            <field name="prefix">V</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_inventory_management" model="ir.sequence">
+            <field name="name">HostelInventory</field>
+            <field name="code">hostel.inventory</field>
+            <field name="prefix">INV</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+        <record id="seq_bills" model="ir.sequence">
+            <field name="name">Bills Sequence</field>
+            <field name="code">hostel.management</field>
+            <field name="prefix">BILL</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_maintenance" model="ir.sequence">
+            <field name="name">Maintenance Sequence</field>
+            <field name="code">hostel.maintenance</field>
+            <field name="prefix">M</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+        <record id="seq_helpdesk" model="ir.sequence">
+            <field name="name">Helpdesk Sequence</field>
+            <field name="code">hostel.helpdesk.seq</field>
+            <field name="prefix">H</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+        <record id="sequence_student_registration" model="ir.sequence">
+            <field name="name">Student Sequence</field>
+            <field name="code">hostel.student.seq</field>
+            <field name="prefix">S</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_roomallocation_order" model="ir.sequence">
+            <field name="name">HostelRoomsAllocation </field>
+            <field name="code">hostel.roomallocation</field>
+            <field name="prefix">ROOM</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_room_order" model="ir.sequence">
+            <field name="name">HostelRooms </field>
+            <field name="code">hostel.room</field>
+            <field name="prefix">R</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_stock_management" model="ir.sequence">
+            <field name="name">HostelStock</field>
+            <field name="code">hostel.stock.line</field>
+            <field name="prefix">Stock</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

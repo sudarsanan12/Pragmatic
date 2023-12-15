@@ -1,0 +1,99 @@
+<odoo>
+    <data>
+        <record id="model_category_hostel" model="ir.module.category">
+            <field name="name">Hostel Management</field>
+            <field name="description">Groups for Hostel</field>
+        </record>
+
+        <record id="students_group" model="res.groups">
+            <field name="name">Student</field>
+            <field name="category_id" ref="hostel_management.model_category_hostel"></field>
+        </record>
+
+        <record id="admin_group" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="hostel_management.model_category_hostel" />
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="access_for_students" model="ir.rule">
+            <field name="name">Student Access Profile</field>
+            <field name="model_id" ref="model_hostel_visitors"></field>
+            <field name="groups" eval="[(4, ref('students_group'))]"></field>
+            <field name="domain_force">[('student_id.user_id','=',user.id)]</field>
+        </record>
+
+        <record id="record_rule_visitors" model="ir.rule">
+            <field name="name">Admin access profile</field>
+            <field name="model_id" ref="model_hostel_visitors"></field>
+            <field name="groups" eval="[(4,ref('admin_group'))]"></field>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="record_rule_helpdesk" model="ir.rule">
+            <field name="name">Student access profile</field>
+            <field name="model_id" ref="model_hostel_helpdesk"></field>
+            <field name="groups" eval="[(4,ref('students_group'))]"></field>
+            <field name="domain_force">[('student_id.user_id','=',user.id)]</field>
+        </record>
+
+        <record id="record_rule_users" model="ir.rule">
+            <field name="name">Users access profile</field>
+            <field name="model_id" ref="model_res_users"></field>
+            <field name="groups" eval="[(4,ref('admin_group'))]"></field>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="record_rule_inventory" model="ir.rule">
+            <field name="name">Inventory access profile</field>
+            <field name="model_id" ref="model_hostel_inventory"></field>
+            <field name="groups" eval="[(4,ref('admin_group'))]"></field>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+          
+
+          <record id="record_rule_maintenance" model="ir.rule">
+            <field name="name">maintenance access profile</field>
+            <field name="model_id" ref="model_hostel_maintenance"></field>
+            <field name="groups" eval="[(4,ref('admin_group'))]"></field>
+            <field name="domain_force">[(1,'=',1)]</field>
+          </record>
+
+
+        <record id="record_rule_student" model="ir.rule">
+            <field name="name">Admin access profile</field>
+            <field name="model_id" ref="model_hostel_student"></field>
+            <field name="groups" eval="[(4,ref('admin_group'))]"></field>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record> 
+
+
+        <record id="access_for_student" model="ir.rule">
+            <field name="name">Student Access Profile</field>
+            <field name="model_id" ref="model_hostel_student"></field>
+            <field name="groups" eval="[(4, ref('students_group'))]"></field>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+        </record>
+        
+        <record id="record_rule_rooms" model="ir.rule">
+            <field name="name">Rooms access profile</field>
+            <field name="model_id" ref="model_hostel_room"></field>
+            <field name="groups" eval="[(4,ref('admin_group'))]"></field>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record id="record_rule_roomallocation" model="ir.rule">
+            <field name="name">Roomallocation access</field>
+            <field name="model_id" ref="model_hostel_roomallocation"></field>
+            <field name="groups" eval="[(4,ref('students_group'))]"></field>
+            <field name="domain_force">[('student_ids.user_id','=',user.id)]</field>
+        </record>
+
+        <record id="access_for_student_bill" model="ir.rule">
+            <field name="name">Student Access Profile</field>
+            <field name="model_id" ref="model_hostel_management"></field>
+            <field name="groups" eval="[(4, ref('students_group'))]"></field>
+            <field name="domain_force">[('student_id.user_id','=',user.id)]</field>
+        </record>
+    </data>
+</odoo>

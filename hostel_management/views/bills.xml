@@ -1,0 +1,172 @@
+<odoo>
+    <data>
+
+
+        <record id="hostel_management_tree" model="ir.ui.view">
+            <field name="name">hostel.management.tree</field>
+            <field name="model">hostel.management</field>
+            <field name="arch" type="xml">
+                <tree string="Hostel">
+                    <field name="sequence" />
+                    <field name="student_id" />
+                    <field name="email" />
+                    <field name="date" />
+                    <field name="address" />
+                    <field name="contact_no" />
+                    <field name="room_id" />
+                    <field name="mess_price" />
+                    <field name="room_price" />
+                    <field name="room_type" />
+                    <field name="room_ac" />
+                    <field name="bath_attached" />
+                    <field name="room_price" />
+                    <field name="status" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- =================================== -->
+        <record id="hostel_management_form" model="ir.ui.view">
+            <field name="name">hostel.management.form</field>
+            <field name="model">hostel.management</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <header>
+                        <button groups="hostel_management.admin_group" name="paid" string="Paid"
+                            attrs="{'invisible': [('status', 'not in', ['draft'])]}" type="object"
+                            class="btn-primary" />
+                        <field name="status" widget='statusbar' />
+
+                    </header>
+
+
+                    <sheet>
+                    <widget name="web_ribbon" title="Paid" bg_color="bg-success" attrs="{'invisible': [('status','!=', 'paid')]}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="sequence" readonly="1" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="student_id" domain="[('states', '=', 'confirmed' )]" />
+                                <field name="date" />                                
+                                
+                                <field name="gender" />
+                                <field name="email" />
+                                <field name="address" />
+                                <field name="contact_no" />
+                            </group>
+                            <group>
+                                <field name="room_id" />
+                                <field name="room_type" />
+                                <field name="room_ac" />
+                                <field name="bath_attached" />
+                                <field name="room_price" invisible="1"/>
+                                <field name="mess_price" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Bill Line" name="bill_lines">
+                                <field name="bill_lines">
+                                    <tree editable="bottom" >
+                                        <field name="fee_type"/>
+                                        <field name="product_id"/>
+                                        <field name="rate" />
+                                        
+                                    </tree>
+                                    
+                                </field>
+                
+                            </page>
+                        </notebook>
+                        <!-- +++++++++++++++++++++++++ -->
+
+
+                        <footer style="text-align:right;">
+                            <group>
+                                <group>
+
+                                </group>
+
+                                <group>
+                                    <group>
+
+                                    </group>
+                                    <h2>
+                                        <group>
+                                            <field name="total_price"/>
+
+                                        </group>
+                                    </h2>
+                                </group>
+
+                            </group>
+                        </footer>
+
+                        
+                        <group>
+                            
+                        </group>
+
+
+                        
+                        
+                    </sheet>
+                    
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- ==================================== -->
+
+
+        <record id="hostel_management_search" model="ir.ui.view">
+            <field name="name">hostel.management.search</field>
+            <field name="model">hostel.management</field>
+            <field name="arch" type="xml">
+                <search string="Hostel">
+                    <field name="student_id" />
+                    <field name="email" />
+                    <field name="date" />
+                    <field name="address" />
+                    <field name="contact_no" />
+                    <field name="room_id" />
+                    <field name="room_price" />
+                    <filter string="filter by room rent" domain="[('room_price', '=', '2000')]"
+                        name="my_rent_filter" />
+                    <filter string="filter by status" domain="[('status', '=', 'paid')]"
+                        name="my_status_filter" />
+                    <separator />
+                <group expand="0" string="Group By">
+                <filter string="students" name="group_by_students" domain="[]" context="{'group_by': 'student_id'}"/>
+                
+                </group>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- ========================================= -->
+
+
+        <record id="hostel_management" model="ir.actions.act_window">
+            <field name="name">Bills</field>
+            <field name="res_model">hostel.management</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="xml">
+                <p class="o_view_nocontent_smiling_face">
+                    Create Bill
+                </p>
+            </field>
+        </record>
+
+        <!-- ======================================================= -->
+
+
+    </data>
+</odoo>

@@ -1,0 +1,84 @@
+<odoo>
+    <data>
+        
+        
+        <!-- ============================= -->
+
+
+<record id="inventory_tree_view" model="ir.ui.view">
+        <field name="name">hostel.inventory</field>
+        <field name="model">hostel.inventory</field> 
+        <field name="arch" type="xml">
+            <tree string="Hostel">
+                <field name="name"/> 
+                <field name="category"/>
+                <field name="count"/>
+                <field name="uom"/>
+                
+            </tree>
+        </field>
+    </record>
+ <record id="inventory_form_view" model="ir.ui.view">
+        <field name="name">hostel.inventory.form</field>
+        <field name="model">hostel.inventory</field> 
+        <field name="arch" type="xml">
+            <form string="Inventory">
+               <sheet>
+               <div class="oe_title">
+                    <h1>
+                        <field name="sequence" readonly="1" />
+                    </h1>
+                </div>
+             
+               
+               <group>
+               <group>
+                <field name="name"/>
+                <field name="uom"/>
+              
+                </group>
+               <group>
+                 <field name="category"/>
+                <field name="count"/>
+               </group>
+                </group>
+                </sheet> 
+            </form>
+        </field>
+    </record> 
+
+    <record id="inventory_search" model="ir.ui.view">
+          <field name="name">hostel.inventory.search</field>
+          <field name="model">hostel.inventory</field>
+          <field name="arch" type="xml">
+            <search string="Student">
+            
+               <field name="name"/>
+               <field name="category"/>
+               <field name="uom"/>
+               <field name="count"/>
+               <field name="sequence"/>
+            
+               <filter string="filter by Category" domain="[('category' , '=', 'Room')]" name="category_filter"/>  
+          
+
+              <group expand="0" string="Group By">
+                <filter string="uom" name="group_by_category" domain="[]" context="{'group_by': 'category'}"/>
+                
+                </group>
+            </search>
+        </field>
+    </record> 
+    <record id="inventory_action" model="ir.actions.act_window">
+            <field name="name">Inventory</field>
+            <field name="res_model">hostel.inventory</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face"> Create Product </p>
+            </field>
+        </record>
+
+<!-- ========================================== -->
+
+    </data>
+</odoo>

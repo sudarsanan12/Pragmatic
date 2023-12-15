@@ -1,0 +1,101 @@
+<odoo>
+    <data>
+
+
+        
+
+        <!-- ========Tree-view========== -->
+
+        <record id="staff_tree_view" model="ir.ui.view">
+            <field name="name">hostel.tree.staff</field>
+            <field name="model">hostel.staff</field>
+            <field name="arch" type="xml">
+                <tree string="Staff">
+                    <field name='name'></field>
+                    <field name='email'></field>
+                    <field name='address'></field>
+                    <field name='city'></field>
+                    <field name='state'></field>
+                    <field name='contact'></field>
+                    <field name='DOB'></field>
+                    <field name='gender'></field>
+                    <field name='marital_status'></field>
+                    <field name='monthly_salary'></field>
+                </tree>
+            </field>
+        </record>
+
+        <!-- =========Form-view========= -->
+
+        <record id="staff_form_view" model="ir.ui.view">
+            <field name="name">hostel.form.staff</field>
+            <field name="model">hostel.staff</field>
+            <field name="arch" type="xml">
+                <form string="Staff">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name='name'></field>
+                                <field name='email'></field>
+                                <field name='address'></field>
+                                <field name='city'></field>
+                                <field name='state'></field>
+                            </group>
+                            <group>
+                                <field name='contact'></field>
+                                <field name='DOB'></field>
+                                <field name='gender'></field>
+                                <field name='marital_status'></field>
+                                <field name='monthly_salary'></field>
+                              
+                            </group>
+                        </group>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="staff_search" model="ir.ui.view">
+            <field name="name">hostel.staff.search</field>
+            <field name="model">hostel.staff</field>
+            <field name="arch" type="xml">
+                <search string="Staff">
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="city"/>
+                    <field name="email"/>
+                    <field name="state"/>
+                    <field name="contact"/>  
+                    <field name="DOB"/>
+                    <field name="marital_status"/>
+                    <field name="monthly_salary"/>
+                    <field name="gender"/>
+                    <filter string="Filter Married" domain="[('marital_status' , '=', 'married')]" name="marital_status_filter"/>  
+                    <group expand="0" string="Group By">
+                        <filter string="Gender" name="group_by_gender" domain="[]" context="{'group_by': 'gender'}"/>
+                        <filter string="Salary" name="group_by_monthly_salary" domain="[]" context="{'group_by': 'monthly_salary'}"/>
+                    </group>
+                </search>
+            </field>
+        </record> 
+
+
+    <!-- ========Action-view========== -->
+
+        <record id="staff_view_action" model="ir.actions.act_window">
+            <field name="name">Staff</field>
+            <field name="res_model">hostel.staff</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create Staff
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

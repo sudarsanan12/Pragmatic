@@ -1,0 +1,119 @@
+<odoo>
+        <data>
+
+
+
+                <menuitem id="hostel_menu_root"
+                        name="Hostel Management"
+                        sequence="1"/>
+
+
+                <menuitem id="userview_menu"
+                        name="Users"
+                        action="hostel_management.user_action_hospital"
+                        parent="hostel_management.hostel_menu_root"
+                        groups="admin_group"
+                        sequence="1"/>
+
+
+                <menuitem id="student_menu_root"
+                        name="Students" 
+                        parent="hostel_management.hostel_menu_root" 
+                        action="student_action"
+                        groups="admin_group"
+                        sequence="2"/>
+            
+
+                <menuitem
+                        id="room_root_menu"
+                        name="Rooms"
+                        parent="hostel_management.hostel_menu_root"
+                        sequence="3"/>
+    
+
+
+                <menuitem id="room_sub_menu"
+                        name="Rooms"
+                        action="hostel_management.room_view_action"
+                        parent="hostel_management.room_root_menu"
+                        groups="admin_group"
+                        sequence="1"/> 
+                
+
+
+                <menuitem id="roomallocation_sub_menu"
+                        name="Room allocation"
+                        action="hostel_management.room_allocation_action"
+                        parent="hostel_management.room_root_menu"
+                        sequence="2"/>
+
+                <menuitem id="hostel_visitors_menu_root" 
+                        name="Visitors Management" 
+                        action="hostel_management.visitors_action" 
+                        parent="hostel_management.hostel_menu_root" 
+                        sequence="4" />
+
+
+                <menuitem id="inventory_menu"
+                        name="Inventory Management"
+                        parent="hostel_management.hostel_menu_root"
+                        groups="admin_group"
+                        sequence="5"/>
+
+
+                <menuitem id="inventory_management"
+                        name="Inventory"
+                        action="hostel_management.inventory_action"
+                        parent="hostel_management.inventory_menu"
+                        sequence="1"/>
+
+
+                <menuitem id="stock_management"
+                        name=" Update Stock"
+                        action="hostel_management.stock_action"
+                        parent="hostel_management.inventory_menu"
+                        sequence="2"/>
+
+
+                <menuitem id="maintenance_menu_root" 
+                        name="Hostel maintenance" 
+                        parent="hostel_management.hostel_menu_root"
+                        action="hostel_management.action_maintenance"
+                        sequence="6"/>
+
+
+                <menuitem id="menu_helpdesk"
+                        name="Help desk"
+                        action="hostel_management.action_helpdesk"
+                        parent="hostel_management.hostel_menu_root"
+                        sequence="7"/>
+
+                <menuitem id="bill_menu_root" 
+                        name="Hostel Bill" 
+                        parent="hostel_management.hostel_menu_root"
+                        action="hostel_management.hostel_management"  
+                        sequence="8"/>
+
+                 <menuitem id="hostel_att_menu_root" 
+                        name="Attendance" 
+                        action="hostel_management.attendance_action" 
+                        parent="hostel_management.hostel_menu_root" 
+                        sequence="9"/>
+
+                <menuitem id="hostel_staff_menu_root" 
+                        name="Staff" 
+                        action="hostel_management.staff_view_action" 
+                        parent="hostel_management.hostel_menu_root" 
+                        sequence="10"/>
+
+                <menuitem id="hostel_contact_root" 
+                        name="Contact" 
+                        action="hostel_management.contact_main_action" 
+                        parent="hostel_management.hostel_menu_root" 
+                        groups="admin_group"
+                        sequence="11"/>
+                 
+
+                   
+        </data>
+</odoo>

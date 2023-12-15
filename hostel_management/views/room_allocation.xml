@@ -1,0 +1,105 @@
+<odoo>
+<data>
+<record id="roomallocation_tree_view" model="ir.ui.view">
+        <field name="name">hostel.room.tree</field>
+        <field name="model">hostel.roomallocation</field> 
+        <field name="arch" type="xml">
+            <tree string="Hostel">
+                <field name="student_ids"/>
+                <field name="room_id"/>
+                <field name="room_price"/>
+                <field name ="mess_price"/>
+                <field name="room_type"/>
+                <field name="room_ac"/>
+                <field name="bath_attached"/>
+                <field name="count"/>
+            </tree>
+        </field>
+    </record>
+
+<!-- ================== -->
+
+ <record id="roomallocation_form_view" model="ir.ui.view">
+        <field name="name">hostel.room.form</field>
+        <field name="model">hostel.roomallocation</field> 
+        <field name="arch" type="xml">
+            <form string="Hostel">
+               
+               <header>
+						<button groups="hostel_management.admin_group" name ="confirm" string = "Confirm" type ="object" attrs="{'invisible': [('states','=', 'confirmed')]}" class="btn-primary"/>
+                        <button groups="hostel_management.admin_group" name ="reject" string = "Reject" type ="object" attrs="{'invisible': [('states','=', 'rejected')]}" class="btn-primary"/>
+                        <field name="states" widget="statusbar" />
+			    </header>
+                <sheet>
+              <div class="oe_title">
+               					<h1>
+                      				<field name="sequence_number" readonly="1"/>
+                				</h1>
+            				</div>
+               
+               <group>
+               <group>
+                <field name="room_id"/>
+                <field name="student_ids" widget="many2many_tags"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                </group>
+               <group>
+               <field name="room_type"/>
+                <field name="room_ac"/>
+                <field name="bath_attached"/>
+                <field name="room_price"/>
+                <field name ="mess_price"/>
+
+                </group>
+                </group>
+                </sheet> 
+            </form>
+        </field>
+    </record> 
+
+<!-- ================== -->
+
+ <record id="room_search_view" model="ir.ui.view">
+        <field name="name">hostel.search</field>
+        <field name="model">hostel.room</field> 
+        <field name="arch" type="xml">
+            <search string="Hostel">
+                <field name="room_no"/>
+                <field name="room_type"/>
+                <filter string="filter by 2 share" domain="[('room_type', '=', '2share')]" name="my_room1_filter"/>
+                <filter string="filter by 3 share" domain="[('room_type', '=', '3share')]" name="my_room2_filter"/>
+                <filter string="filter by 4 share" domain="[('room_type', '=', '4share')]" name="my_room3_filter"/>
+                <filter string="filter by AC" domain="[('room_ac', '=', 'True')]" name="my_ac_filter"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                <filter string="AC" name="group_by_AC" domain="[]" context="{'group_by': 'room_ac'}"/>
+                <filter string="Bathroom" name="group_by_bathroom" domain="[]" context="{'group_by': 'bath_attached'}"/>
+                </group>
+            </search>
+        </field>
+    </record> 
+
+
+<!-- ######################################################################################################## -->
+
+
+
+
+        <record id="room_allocation_action" model="ir.actions.act_window">
+           <field name="name">Room Allocation</field>
+           <field name="res_model">hostel.roomallocation</field>
+           <field name="view_mode">tree,form</field>
+           <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                Allocate Room
+                 </p>
+                </field>
+              </record>
+              
+
+<!-- ######################################################################################################## -->
+
+
+</data>
+</odoo> 

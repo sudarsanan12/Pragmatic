@@ -1,0 +1,122 @@
+<odoo>
+    <data>
+        <template id="custom_layout">
+
+
+            <div class="header">
+                <div class="text-center" style="border-bottom: 1px solid black;">
+                    <div style="border-top: 1px solid #000; margin-top: 20px; margin-bottom: 20px;">
+                        <img src="/hostel_management/static/img/hostel.jpg"
+                            style="width: 100px; height: 80px;" />
+                        <h1 style="text-align:center;">BLISS HOSTEL</h1>
+                        <p style="text-align:center;">Address: Marconia Main Street Ernakulam</p>
+                        <p style="text-align:center;">Phone: 123-456-7890</p>
+                        <div class="row">
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="article o_report_layout_standard">
+                <t t-out="0" />
+            </div>
+
+            <div class="footer o_standard_footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <br /> Page<p>
+                        <span class="page" />
+                    </p>
+
+
+                </div>
+
+            </div>
+        </template>
+        <template id="maintenance_report_qweb_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div style="width:100%; text-align:center; font-size:30px">
+                            <h10>
+                                <strong>Hostel Maintenance Report</strong>
+                            </h10>
+                        </div>
+                        <br/><br/>
+
+                        <div class="page">
+
+                            <div class="column mt32 mb32">
+                                <div class="col-auto col-3 mw-100 mb-2">
+                                    <strong>Maintenance ID</strong>
+                                    <p class="m-0" t-field="o.sequence" />
+                                </div>
+                                <div class="col-auto col-3 mw-100 mb-2">
+                                    <strong>Complaint Description</strong>
+                                    <p class="m-0" t-field="o.complaint_description" />
+                                </div>
+
+
+                                <div class="col-auto col-3 mw-100 mb-2">
+                                    <strong>Complaint Time:</strong>
+                                    <p class="m-0" t-field="o.complaint_time" />
+                                </div>
+
+                               
+                            </div>
+
+
+                            <br></br><h2 class="mt16">Student # <span t-field="o.helpdesk_id" /></h2>
+                            <br></br>
+                            <table class="table table-sm o_main_table">
+                                <thead style="display: table-row-group">
+                                    <tr>
+                                        <th> Assigned Person</th>
+                                        <th> Profession </th>
+                                        <th> Room No</th>
+                                        <th> Status</th>
+                                        <th> Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td>
+                                        <span t-field="o.assigned_person" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.profession" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.room_no" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.status" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.price" />
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+    <report
+        id="maintenance_report_id"
+        model="hostel.maintenance"
+        string="Print Maintenance Report"
+        name="hostel_management.maintenance_report_qweb_template"
+        file="hostel_management.maintenance_report_qweb_template"
+    />
+
+</odoo>

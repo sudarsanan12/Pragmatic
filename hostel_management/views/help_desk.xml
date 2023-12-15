@@ -1,0 +1,96 @@
+<odoo>
+    <record id="view_helpdesk_search" model="ir.ui.view">
+        <field name="name">hostel.helpdesk.search</field>
+        <field name="model">hostel.helpdesk</field>
+        <field name="arch" type="xml">
+            <search string="helpdesk">
+                <field name="student_id"/>
+                <field name="room_no"/>
+                <field name="complaint_description"/>
+                <field name="complaint_time"/>
+                <field name="complaint_status"/>
+                <filter string="filter by status" domain="[('complaint_status','=','pending')]" name="my_status_filter"/>
+                <group expand="0" string="Group By">
+                <filter string="Room no" name="group_by_room_no" domain="[]" context="{'group_by': 'room_no'}"/>
+                
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+<!-- ================================================= -->
+
+
+    <record id="view_helpdesk_form" model="ir.ui.view">
+            <field name="name">hostel.helpdesk.form</field>
+            <field name="model">hostel.helpdesk</field>
+            <field name="arch" type="xml">
+                <form string="Helpdesk">
+                    <header>
+                        <button groups = "hostel_management.admin_group" name="create_maintenance" string="Create Maintenance" class="btn-primary" type="object" attrs="{'invisible': [('complaint_status', 'not in', ['pending'])]}"/>
+                    </header>
+                    <sheet>
+                        <div groups="hostel_management.admin_group" class="oe_button_box" name="button_box">
+                            <button name="action_open" class="o_stat_button" type="object" icon="fa-star">
+                                <span class="o_stat_text">Go to Maintenance</span>
+                            </button>
+                        </div> 
+                        <div class="oe_title">
+                            <h1>
+                                <field name="seq"/>
+                            </h1>
+                        </div>  
+                        <group>
+                            <field name="student_id" domain="[('states', '=', 'confirmed' )]"/>
+                            <field name="room_no"/>
+                            <field name="complaint_description"/>
+                            <field name="complaint_time"/>
+                            <field name="complaint_status"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+
+
+<!-- ==================================================================== -->
+
+    
+    <record id="view_helpdesk_tree" model="ir.ui.view">
+        <field name="name">hostel.helpdesk.tree</field>
+        <field name="model">hostel.helpdesk</field>
+        <field name="arch" type="xml">
+            <tree string="helpdesk">
+                <field name="seq"/>
+                <field name="student_id"/>
+                <field name="room_no"/>
+                <field name="complaint_description"/>
+                <field name="complaint_time"/>
+                <field name="complaint_status"/>
+            </tree>
+        </field>
+    </record>
+
+
+<!-- ==================================================================== -->
+
+
+
+    <record id="action_helpdesk" model="ir.actions.act_window">
+        <field name="name">Help desk</field>
+        <field name="res_model">hostel.helpdesk</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                    Help Desk
+            </p>
+        </field>
+    </record>
+
+
+<!-- ==================================================================== -->
+
+
+
+</odoo>

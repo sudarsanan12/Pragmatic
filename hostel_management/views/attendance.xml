@@ -1,0 +1,49 @@
+<odoo>
+	<data>
+        <record id="attendance_action" model="ir.actions.act_window">
+			<field name="name">Attendance</field>
+			<field name="res_model">hostel.attendance</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+        <record id="attendance_form" model="ir.ui.view">
+			<field name="name">hostel.attendance.form</field>
+			<field name="model">hostel.attendance</field>
+			<field name="arch" type="xml">
+				<form string="Attendance">
+					<header>
+						<button groups="hostel_management.admin_group" style="border-color:#579184; " name="all_students" string="All Students" type="object"  class="btn-primary"/>
+					</header>
+                    <sheet>
+						<group>
+						<!-- <h1 style="color:#579184"> -->
+							<field name="date"/>
+						<!-- </h1> -->
+						</group>
+						<notebook>
+							<pages string="Notes" name="notes">
+								<field name="attendance_lines">
+									<tree editable="bottom">
+										<field name="student_id"/>
+										<field name="first_name"/>
+										<field name="last_name" />
+										<field name="present"/>
+									</tree>
+								</field>
+							</pages>
+						</notebook>
+					</sheet>
+                </form>
+            </field>
+        </record>
+        <record id="student_action_tree" model="ir.ui.view">
+           	<field name="name">hostel.attendance.tree</field>
+           	<field name="model">hostel.attendance</field>
+           	<field name="arch" type="xml">
+		   		<tree string="Attendance">
+					<field name="date"/>
+					<field name="attendance_lines"/>  
+            	</tree>
+        	</field>
+    	</record>
+    </data>
+</odoo>
